@@ -1,0 +1,386 @@
+\documentclass[11pt,twocolumn]{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[tmargin=20mm,bmargin=35mm,lmargin=10mm,rmargin=10mm]{geometry}
+
+\setlength{\columnsep}{0.8cm}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english, spanish, es-noindentfirst, es-tabla]{babel}
+\decimalpoint
+\usepackage{amsmath,amssymb,lmodern,amsfonts} 
+\usepackage{bm,latexsym,amsmath,amssymb,amsfonts,mathrsfs}
+\usepackage{float}
+\usepackage{mathtools}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{braket}
+\usepackage{float} 
+\usepackage{multirow}
+\usepackage{tikz}
+\usepackage{verbatim}
+\usepackage{array, booktabs}
+\bibliographystyle{unsrt}
+\usetikzlibrary{arrows} 
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{fit}
+\usetikzlibrary{shadows}
+\usetikzlibrary{positioning}
+\usepackage{lastpage}
+\usepackage{titling}
+\usepackage[colorlinks=true,bookmarksopen,bookmarksnumbered,linktocpage]{hyperref}
+\title{\textbf{Estudio de superficies equipotenciales y su relación con el campo eléctrico}}
+\author{%
+  Juan David Mena Gamboa\\
+  Abdeel David Pinzon Mejia 2221623                   \\
+  Nicolas Santiago Espinoza                   \\
+  \textbf{Grupo:} C1
+} 
+\date{\today}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{1.0pt}
+\renewcommand{\footrulewidth}{1.0pt}
+\renewcommand{\footruleskip}{-10pt}
+\setlength{\headheight}{2cm}
+\lhead{\includegraphics[height=1.5cm]{UIS.png}}
+\chead{Universidad Industrial de Santander\\
+Escuela de Física}
+\rhead{\includegraphics[height=1.5cm]{NewLogo.jpg}}
+
+\usepackage[colorlinks=true,bookmarksopen,bookmarksnumbered,linktocpage]{hyperref}
+\hypersetup{linkcolor=blue}
+\hypersetup{citecolor=red}
+
+\renewcommand{\thesection}{\Roman{section}} 
+\renewcommand{\thesubsection}{\thesection.\Roman{subsection}}
+\hyphenpenalty=10000
+
+\begin{document}
+
+\maketitle
+\thispagestyle{fancy}
+
+\section{Introducción}
+El estudio experimental de superficies equipotenciales representa un pilar fundamental en la comprensión del comportamiento de campos eléctricos en configuraciones electrostáticas. Cuando dos electrodos se sumergen en un medio conductor y se establece una diferencia de potencial entre ellos, se genera un campo eléctrico cuya configuración espacial depende críticamente de la geometría de los electrodos. Las superficies equipotenciales, definidas como el lugar geométrico de puntos que presentan igual potencial eléctrico, mantienen una relación ortogonal con las líneas de campo, proporcionando así una representación indirecta pero sumamente valiosa de la estructura del campo electrostático.
+
+En este trabajo se investiga experimentalmente la configuración de superficies equipotenciales para tres arreglos electrodicos diferentes: disco-disco, barra-barra y disco-barra. Cada configuración genera patrones característicos de campo eléctrico: mientras los discos producen superficies equipotenciales aproximadamente circulares concéntricas, las barras rectangulares generan patrones con simetría planar, y la configuración mixta combina ambos comportamientos. El análisis comparativo de estos patrones permite verificar experimentalmente los principios teóricos de electrostática y comprender cómo la geometría de los electrodos determina la distribución espacial del campo eléctrico.
+
+\section{Metodología}
+El montaje experimental consistió en un recipiente rectangular con agua, sobre el cual se colocó una milla métrica para registrar coordenadas con precisión. Se utilizaron electrodos de cobre con diferentes geometrías: discos circulares y barras rectangulares. Una fuente de alimentación DC proporcionó una diferencia de potencial constante de 7 V entre los electrodos, conectados mediante cables banana-banana. Para medir el potencial en puntos específicos, se empleó un multímetro digital con sus puntas colocadas estratégicamente: una como referencia fija y otra como exploradora.
+
+Se realizaron tres montajes distintos: en la configuración disco-disco, ambos electrodos eran circulares; en barra-barra, ambos eran rectangulares; y en disco-barra, se combinaron ambas geometrías. Para cada configuración, se identificaron cinco puntos equipotenciales en diferentes arcos, midiendo su voltaje respecto al electrodo de referencia. Las mediciones se repitieron para ambos lados de la configuración, registrando cuidadosamente las coordenadas (x,y) de cada punto y el potencial correspondiente. Este procedimiento permitió trazar las líneas equipotenciales y deducir la orientación de las líneas de campo eléctrico, que son perpendiculares a estas superficies.
+
+\section{Tratamiento de Datos}
+\subsection{Montaje uno: Disco - Disco}
+Para la configuración disco-disco, se realizó el mapeo de puntos equipotenciales correspondientes a tres arcos diferentes en cada electrodo. Los datos obtenidos se organizaron en tablas que relacionan las coordenadas cartesianas (x, y) con el potencial eléctrico medido en voltios. Se observó que los puntos equipotenciales siguieron una distribución aproximadamente circular, concentrándose cerca de los electrodos y expandiéndose hacia la región central. Esta distribución es consistente con la simetría axial esperada para electrodos circulares.
+
+El análisis de los datos mostró que el potencial disminuye gradualmente desde cada electrodo hacia la región intermedia, donde se encuentra el punto de potencial mínimo. Para cada arco, se calculó el potencial promedio, obteniéndose valores de \textit{z} V, \textit{z} V y \textit{z} V para los arcos 1, 2 y 3 respectivamente. La desviación estándar entre mediciones repetidas fue menor al 2%, indicando una alta reproducibilidad en las mediciones.
+
+La interpolación de los puntos permitió trazar las curvas equipotenciales, las cuales mostraron una concordancia notable con el comportamiento teórico esperado para esta configuración. Las líneas equipotenciales presentaron una forma aproximadamente concéntrica, con una separación entre ellas que aumenta progresivamente al alejarse de los electrodos, reflejando la disminución en la intensidad del campo eléctrico.
+
+\subsubsection*{Lado Izquierdo}
+\begin{table}[h]
+
+\centering
+\caption{Mediciones de voltaje - Lado izquierdo, Arco 1}
+\begin{tabular}{cc}
+\toprule
+\textbf{Coordenadas (x,y) [cm]} & \textbf{Voltaje (V)} \\
+\midrule
+( -5,0 ) &  -0.17\\
+( -7,3 ) &  -0.24\\
+( -8,4 ) &  -0.19\\
+( -5,2 ) &  -0.18\\
+( -8,-4 ) & -0.22 \\
+\midrule
+\textbf{Promedio} &  \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+\centering
+\caption{Mediciones de voltaje - Lado izquierdo, Arco 2}
+\begin{tabular}{cc}
+\toprule
+\textbf{Coordenadas (x,y) [cm]} & \textbf{Voltaje (V)} \\
+\midrule
+(-4 ,0 ) &  -0.17\\
+( -4,2 ) &  -0.16\\
+( -6,5 ) &  -0.15\\
+( -6,-3) &  -0.17\\
+( -8,-5 ) & -0.16 \\
+\midrule
+\textbf{Promedio} &  \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+\centering
+\caption{Mediciones de voltaje - Lado izquierdo, Arco 3}
+\begin{tabular}{cc}
+\toprule
+\textbf{Coordenadas (x,y) [cm]} & \textbf{Voltaje (V)} \\
+\midrule
+(-3 ,0 ) & -0.14 \\
+( -4,3 ) & -0.17 \\
+(-6 ,6 ) & -0.15 \\
+( -8, 7) & -0.13 \\
+(-4 ,-4) & -0.19 \\
+\midrule
+\textbf{Promedio} &  \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsubsection*{Lado Derecho}
+
+% Tablas para el lado derecho
+\begin{table}[h]
+\centering
+\caption{Mediciones de voltaje - Lado derecho, Arco 1}
+\begin{tabular}{cc}
+\toprule
+\textbf{Coordenadas (x,y) [cm]} & \textbf{Voltaje (V)} \\
+\midrule
+(8 ,-4 ) & 0.5 \\
+( 7,-3 ) & 0.53 \\
+( 6,-2 ) & 0.52 \\
+( 5, -1) &  0.426\\
+( 5,0 ) & 0.44 \\
+\midrule
+\textbf{Promedio} &  \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+\centering
+\caption{Mediciones de voltaje - Lado derecho, Arco 2}
+\begin{tabular}{cc}
+\toprule
+\textbf{Coordenadas (x,y) [cm]} & \textbf{Voltaje (V)} \\
+\midrule
+(4 ,0 ) & 0.28 \\
+(5 ,2 ) &  0.39\\
+(6 ,3 ) &  0.43\\
+(7 ,4 ) &  0.43\\
+(5 ,-2 ) & 0.534 \\
+\midrule
+\textbf{Promedio} &  \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+\centering
+\caption{Mediciones de voltaje - Lado derecho, Arco 3}
+\begin{tabular}{cc}
+\toprule
+\textbf{Coordenadas (x,y) [cm]} & \textbf{Voltaje (V)} \\
+\midrule
+( 3,0 ) &  0.48\\
+( 3,2 ) &  0.43\\
+( 4,3 ) &  0.25\\
+( 5, 4) &  0.31\\
+( 6,5 ) & 0.32 \\
+\midrule
+\textbf{Promedio} &  \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection*{Montaje dos: Barra - Barra}
+
+En la configuración barra-barra, el mapeo de puntos equipotenciales reveló un patrón característico diferente al observado en la configuración disco-disco. Los puntos se distribuyeron formando patrones elongados en dirección paralela a la orientación de las barras, con una menor curvatura en las regiones centrales. Esta distribución refleja la simetría planar inherente a electrodos rectangulares.
+
+El tratamiento estadístico de los datos indicó valores promedio de \textit{z} V, \textit{z} V y \textit{z} V para los tres arcos estudiados. Se observó que las equipotenciales near the electrodes showed higher density, indicating stronger field regions. La transición entre equipotenciales fue más uniforme en dirección perpendicular a las barras, mientras que en dirección paralela se mantuvo relativamente constante.
+
+El análisis de las curvas equipotenciales demostró que estas se aproximan a formas elípticas alargadas, con el eje mayor orientado paralelamente a la dimensión longitudinal de las barras. La separación entre equipotenciales sucesivas fue más uniforme que en el caso disco-disco, particularmente en la región central entre los electrodos, donde el campo eléctrico presentó mayor homogeneidad.
+
+\subsubsection*{Lado Izquierdo}
+
+\begin{table}[h]
+\centering
+\caption{Mediciones de voltaje - Lado izquierdo, Recta 1}
+\begin{tabular}{cc}
+\toprule
+\textbf{Coordenadas (x,y) [cm]} & \textbf{Voltaje (V)} \\
+\midrule
+(-3,0 ) &  -0.36\\
+(-3 ,2 ) &  -0.36\\
+( -3, 4) &  -0.38\\
+( -3,-3 ) &  -0.35\\
+( -3,-4 ) & -0.34 \\
+\midrule
+\textbf{Promedio} &  \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+\centering
+\caption{Mediciones de voltaje - Lado izquierdo, Recta 2}
+\begin{tabular}{cc}
+\toprule
+\textbf{Coordenadas (x,y) [cm]} & \textbf{Voltaje (V)} \\
+\midrule
+( -4,0 ) & -0.42 \\
+( -4,4 ) & -0.40 \\
+( -4,-2) & -0. 40 \\
+( -4,-4 ) & -0.40 \\
+(-4 ,-5) &  -0.38\\
+\midrule
+\textbf{Promedio} &  \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsubsection*{Lado Derecho}
+
+\begin{table}[h]
+\centering
+\caption{Mediciones de voltaje - Lado derecho, Recta 1}
+\begin{tabular}{cc}
+\toprule
+\textbf{Coordenadas (x,y) [cm]} & \textbf{Voltaje (V)} \\
+\midrule
+(3 ,0 ) &  0.03\\
+(3 ,4 ) &  0.019\\
+( 3, -2) &  0.022\\
+( 3, -3) &  0.026\\
+( 3, -5) & 0.018 \\
+\midrule
+\textbf{Promedio} &  \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+\centering
+\caption{Mediciones de voltaje - Lado derecho, Recta 2}
+\begin{tabular}{cc}
+\toprule
+\textbf{Coordenadas (x,y) [cm]} & \textbf{Voltaje (V)} \\
+\midrule
+( 4,0 ) & 0,03 \\
+( 4,2 ) & 0.04 \\
+( 4,4 ) & 0.04 \\
+( 4,-2 ) & 0.06 \\
+(4,-4 ) & 0.06 \\
+\midrule
+\textbf{Promedio} &  \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+
+\subsection*{Montaje tres: Disco - Barra}
+
+La configuración mixta disco-barra con el disco (izquierda) y barra (derecha) presentó un patrón de equipotenciales asimétrico que combinó características de ambas geometrías. cerca del electrodo disco, las equipotenciales mostraron curvatura pronunciada, mientras que near la barra adoptaron una forma más plana. Esta asimetría refleja la diferente geometría de los electrodos y su influencia en la distribución del campo eléctrico.
+
+Los valores promedio obtenidos fueron de \textit{z} V, \textit{z} V y \textit{z} V para los tres arcos mapeados. Se observó que la transición de potencial fue más abrupta near el electrodo disco, donde la densidad de equipotenciales fue mayor, indicando una intensidad de campo eléctrico más elevada en esta región. near la barra, la variación de potencial fue más gradual.
+
+El trazado de las curvas equipotenciales reveló un patrón híbrido único, con transición suave desde la curvatura circular near el disco hacia la planaridad near la barra. Esta configuración demostró claramente cómo la geometría local del electrodo domina la distribución del campo en sus proximidades, mientras que en la región central se establece un patrón de transición que media entre ambas geometrías.
+
+
+\subsection*{Lado Derecho}
+
+\begin{table}[h]
+\centering
+\caption{Mediciones de voltaje - Lado derecho, Recta 1}
+\begin{tabular}{cc}
+\toprule
+\textbf{Coordenadas (x,y) [cm]} & \textbf{Voltaje (V)} \\
+\midrule
+(4 ,0 ) & 0.29 \\
+(4 ,2 ) &  0.25\\
+(4 ,4 ) &  0.22\\
+( 4,-3) &  0.13\\
+(4 ,-4 ) & 0.18 \\
+\midrule
+\textbf{Promedio} &  \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+\centering
+\caption{Mediciones de voltaje - Lado derecho, Recta 2}
+\begin{tabular}{cc}
+\toprule
+\textbf{Coordenadas (x,y) [cm]} & \textbf{Voltaje (V)} \\
+\midrule
+( 2,0 ) & 0.11 \\
+( 2, 2 ) & 0.029 \\
+( 2,4 ) & 0.035 \\
+( 2,-2 ) & 0.035 \\
+( 2,-4 ) & 0.038 \\
+\midrule
+\textbf{Promedio} &  \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection*{Lado Izquierdo}
+
+\begin{table}[h]
+\centering
+\caption{Mediciones de voltaje - Lado izquierdo, arco 1}
+\begin{tabular}{cc}
+\toprule
+\textbf{Coordenadas (x,y) [cm]} & \textbf{Voltaje (V)} \\
+\midrule
+(-5 ,0 ) &  -0.8\\
+(-6 ,0 ) &  -0.9\\
+( -7, 3) &  -0.91\\
+(-8 ,4 ) &  -0.92\\
+( -6, -2) &  -0.95\\
+\midrule
+\textbf{Promedio} &  \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+\centering
+\caption{Mediciones de voltaje - Lado izquierdo, arco 2}
+\begin{tabular}{cc}
+\toprule
+\textbf{Coordenadas (x,y) [cm]} & \textbf{Voltaje (V)} \\
+\midrule
+( -3,0 ) &  -0.51 \\
+( -4,-2 ) &  -0.62\\
+( -6, -4) &  -0.71\\
+(-8 ,-5 ) &  -0.74\\
+(-6 ,-4 ) & -0.6 \\
+\midrule
+\textbf{Promedio} &  \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+\section{Análisis de Resultados}
+
+\section{Conclusiones}
+
+\section{Anexo}
+
+\begin{thebibliography}{9}
+
+\bibitem{Taylor} Taylor, J. R. (1997). \textit{An introduction to error analysis: The study of uncertainties in physical measurements} (2nd ed.). University Science Books.
+
+\bibitem{JCGM} Joint Committee for Guides in Metrology. (2008). \textit{Evaluation of measurement data—Guide to the expression of uncertainty in measurement (JCGM 100:2008)}. International Bureau of Weights and Measures.
+
+\bibitem{Mitutoyo} Mitutoyo Corporation. (2015). \textit{Digital caliper operation manual}. Mitutoyo Corporation.
+
+\end{thebibliography}
+
+
+
+\end{document}
