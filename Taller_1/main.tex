@@ -33,8 +33,8 @@
 \author{%
   Juan David Mena Gamboa\\
   Abdeel David Pinzon Mejia 2221623                   \\
-  Nicolas Santiago Espinoza                   \\
-  \textbf{Grupo:} C1
+  Nicolas Santiago Espinosa Carrillo 2240678                  \\
+  \textbf{Grupo:} E1
 } 
 \date{\today}
 
@@ -63,20 +63,39 @@ Escuela de Física}
 \thispagestyle{fancy}
 
 \section{Introducción}
-El estudio experimental de superficies equipotenciales representa un pilar fundamental en la comprensión del comportamiento de campos eléctricos en configuraciones electrostáticas. Cuando dos electrodos se sumergen en un medio conductor y se establece una diferencia de potencial entre ellos, se genera un campo eléctrico cuya configuración espacial depende críticamente de la geometría de los electrodos. Las superficies equipotenciales, definidas como el lugar geométrico de puntos que presentan igual potencial eléctrico, mantienen una relación ortogonal con las líneas de campo, proporcionando así una representación indirecta pero sumamente valiosa de la estructura del campo electrostático.
+El estudio experimental de superficies equipotenciales es importante en la comprensión del comportamiento de campos eléctricos en configuraciones electrostáticas. Cuando dos electrodos se sumergen en un medio conductor y se establece una diferencia de potencial entre ellos, se genera un campo eléctrico cuya configuración espacial depende críticamente de la geometría de los electrodos. Las superficies equipotenciales, definidas como el lugar geométrico de puntos que presentan igual potencial eléctrico, mantienen una relación ortogonal con las líneas de campo, proporcionando así una representación indirecta pero sumamente valiosa de la estructura del campo electrostático.
 
-En este trabajo se investiga experimentalmente la configuración de superficies equipotenciales para tres arreglos electrodicos diferentes: disco-disco, barra-barra y disco-barra. Cada configuración genera patrones característicos de campo eléctrico: mientras los discos producen superficies equipotenciales aproximadamente circulares concéntricas, las barras rectangulares generan patrones con simetría planar, y la configuración mixta combina ambos comportamientos. El análisis comparativo de estos patrones permite verificar experimentalmente los principios teóricos de electrostática y comprender cómo la geometría de los electrodos determina la distribución espacial del campo eléctrico.
+En este trabajo se investiga experimentalmente la configuración de superficies equipotenciales, para extraer la información de las líneas de campo eléctrico, para tres arreglos electrodicos diferentes: disco-disco, barra-barra y disco-barra. Cada configuración genera patrones característicos de campo eléctrico: mientras los discos producen superficies equipotenciales aproximadamente circulares concéntricas, las barras rectangulares generan patrones con simetría planar, y la configuración mixta combina ambos comportamientos. El análisis comparativo de estos patrones permite verificar experimentalmente los principios teóricos de electrostática y comprender cómo la geometría de los electrodos determina la distribución espacial del campo eléctrico. El campo se determina con ayuda de la relación:
+
+\[\Delta E = \frac{\Delta V}{\Delta l}\] donde \(\Delta l\) es la distancia entre los puntos que se considera la diferencia de potencial y \(\Delta V\) la diferencia de potencial.
+
+En este tipo de experimentos, uno de los factores que puede alterar los resultados es la electrólisis del agua. Cuando se aplica una diferencia de potencial entre los electrodos, la electrólisis produce burbujas de hidrógeno y oxígeno que modifican localmente la conductividad del medio y distorsionan el campo eléctrico. Además, los cambios en la concentración de iones y la posible polarización de los electrodos generan variaciones adicionales en la distribución del potencial. Como consecuencia, las líneas equipotenciales y de campo eléctrico medidas pueden diferir de las predicciones teóricas ideales. Además, otra limitación del experimento son los efectos de borde, que no serán considerados a detalle.
 
 \section{Metodología}
-El montaje experimental consistió en un recipiente rectangular con agua, sobre el cual se colocó una milla métrica para registrar coordenadas con precisión. Se utilizaron electrodos de cobre con diferentes geometrías: discos circulares y barras rectangulares. Una fuente de alimentación DC proporcionó una diferencia de potencial constante de 7 V entre los electrodos, conectados mediante cables banana-banana. Para medir el potencial en puntos específicos, se empleó un multímetro digital con sus puntas colocadas estratégicamente: una como referencia fija y otra como exploradora.
+El montaje experimental consistió en un recipiente rectangular con agua, sobre el cual se colocó una milla métrica para registrar coordenadas con precisión. Se utilizaron electrodos con diferentes geometrías: discos circulares y barras rectangulares. Una fuente de alimentación DC proporcionó una diferencia de potencial constante de 5V entre los electrodos, conectados mediante cables banana-banana. Para medir el potencial en puntos específicos, se empleó un multímetro digital con sus puntas colocadas estratégicamente: una como referencia fija y otra como exploradora.
 
 Se realizaron tres montajes distintos: en la configuración disco-disco, ambos electrodos eran circulares; en barra-barra, ambos eran rectangulares; y en disco-barra, se combinaron ambas geometrías. Para cada configuración, se identificaron cinco puntos equipotenciales en diferentes arcos, midiendo su voltaje respecto al electrodo de referencia. Las mediciones se repitieron para ambos lados de la configuración, registrando cuidadosamente las coordenadas (x,y) de cada punto y el potencial correspondiente. Este procedimiento permitió trazar las líneas equipotenciales y deducir la orientación de las líneas de campo eléctrico, que son perpendiculares a estas superficies.
 
 \section{Tratamiento de Datos}
+
+Para el tratamiento de datos y medidas estadísticas relativas a cuantificar el error del experimento, se usaron las siguientes fórmulas:
+
+Promedio:
+
+\[\bar{V} = \frac{\sum V_i}{n}\]
+
+Desviación estándar:
+
+\[S_V = \frac{\sqrt{\sum (V_i - \bar{V})^2}}{n-1}\]
+
+Incertidumbre:
+
+\[\delta = \frac{S_V}{\sqrt{n}}\]
+
 \subsection{Montaje uno: Disco - Disco}
 Para la configuración disco-disco, se realizó el mapeo de puntos equipotenciales correspondientes a tres arcos diferentes en cada electrodo. Los datos obtenidos se organizaron en tablas que relacionan las coordenadas cartesianas (x, y) con el potencial eléctrico medido en voltios. Se observó que los puntos equipotenciales siguieron una distribución aproximadamente circular, concentrándose cerca de los electrodos y expandiéndose hacia la región central. Esta distribución es consistente con la simetría axial esperada para electrodos circulares.
 
-El análisis de los datos mostró que el potencial disminuye gradualmente desde cada electrodo hacia la región intermedia, donde se encuentra el punto de potencial mínimo. Para cada arco, se calculó el potencial promedio, obteniéndose valores de \textit{z} V, \textit{z} V y \textit{z} V para los arcos 1, 2 y 3 respectivamente. La desviación estándar entre mediciones repetidas fue menor al 2%, indicando una alta reproducibilidad en las mediciones.
+El análisis de los datos mostró que el potencial disminuye gradualmente desde cada electrodo hacia la región intermedia, donde se encuentra el punto de potencial mínimo. Para cada arco, se calculó el potencial promedio, obteniéndose valores de \textit{z} V, \textit{z} V y \textit{z} V para los arcos 1, 2 y 3 respectivamente. La desviación estándar entre mediciones repetidas fue menor al 2, indicando una alta reproducibilidad en las mediciones.
 
 La interpolación de los puntos permitió trazar las curvas equipotenciales, las cuales mostraron una concordancia notable con el comportamiento teórico esperado para esta configuración. Las líneas equipotenciales presentaron una forma aproximadamente concéntrica, con una separación entre ellas que aumenta progresivamente al alejarse de los electrodos, reflejando la disminución en la intensidad del campo eléctrico.
 
@@ -95,10 +114,23 @@ La interpolación de los puntos permitió trazar las curvas equipotenciales, las
 ( -5,2 ) &  -0.18\\
 ( -8,-4 ) & -0.22 \\
 \midrule
-\textbf{Promedio} &  \\
+\textbf{Promedio} & -0.2V \\
 \bottomrule
 \end{tabular}
 \end{table}
+
+Para la tabla 1 de mediciones, se obtuvieron los siguientes valores:
+
+\[S_V = 0.03\]
+\[\delta = 0.01\]
+
+El valor de referencia para la curva equipotencial será:
+
+\[V_{ref} = -0.2 \pm 0.01 [V]\]
+
+Y su campo eléctrico:
+
+\[E_{ref} = -2.5 \pm 0.16 [\frac{V}{m}]\]
 
 \begin{table}[h]
 \centering
@@ -113,10 +145,24 @@ La interpolación de los puntos permitió trazar las curvas equipotenciales, las
 ( -6,-3) &  -0.17\\
 ( -8,-5 ) & -0.16 \\
 \midrule
-\textbf{Promedio} &  \\
+\textbf{Promedio} &  -0.16V\\
 \bottomrule
 \end{tabular}
 \end{table}
+
+Para la tabla 2 de mediciones, se obtuvieron los siguientes valores:
+
+\[S_V = 0.008\]
+
+\[\delta = 0.003\]
+
+El valor de referencia para la curva equipotencial será:
+
+\[V_{ref} = -0.162 \pm 0.003\ [V]\]
+
+Y su campo eléctrico:
+
+\[E_{ref} = -2.025 \pm 0.046 [\frac{V}{m}]\]
 
 \begin{table}[h]
 \centering
@@ -131,10 +177,24 @@ La interpolación de los puntos permitió trazar las curvas equipotenciales, las
 ( -8, 7) & -0.13 \\
 (-4 ,-4) & -0.19 \\
 \midrule
-\textbf{Promedio} &  \\
+\textbf{Promedio} &  -0.15\\
 \bottomrule
 \end{tabular}
 \end{table}
+
+Para la tabla 3 de mediciones, se obtuvieron los siguientes valores:
+
+\[S_V = 0.02\]
+
+\[\delta = 0.01\]
+
+El valor de referencia para la curva equipotencial será:
+
+\[V_{ref} = -0.15 \pm 0.01 [V] \]
+
+Y su campo eléctrico:
+
+\[E_{ref} = -1.95 \pm 0.13 [\frac{V}{m}]\]
 
 \subsubsection*{Lado Derecho}
 
@@ -152,10 +212,23 @@ La interpolación de los puntos permitió trazar las curvas equipotenciales, las
 ( 5, -1) &  0.426\\
 ( 5,0 ) & 0.44 \\
 \midrule
-\textbf{Promedio} &  \\
+\textbf{Promedio} &  0.48 V\\
 \bottomrule
 \end{tabular}
 \end{table}
+
+Para la tabla 4 de mediciones, se obtuvieron los siguientes valores:
+
+\[S_V = 0.04\]
+\[\delta = 0.02\]
+
+El valor de referencia para la curva equipotencial será:
+
+\[V_{ref} = 0.48 \pm 0.02 [V]\]
+
+Y su campo eléctrico:
+
+\[E_{ref} = 6.03 \pm 0.26 [\frac{V}{m}]\]
 
 \begin{table}[h]
 \centering
@@ -170,10 +243,23 @@ La interpolación de los puntos permitió trazar las curvas equipotenciales, las
 (7 ,4 ) &  0.43\\
 (5 ,-2 ) & 0.534 \\
 \midrule
-\textbf{Promedio} &  \\
+\textbf{Promedio} &  0.41 V\\
 \bottomrule
 \end{tabular}
 \end{table}
+
+Para la tabla 5 de mediciones, se obtuvieron los siguientes valores:
+
+\[S_V = 0.09\]
+\[\delta = 0.04\]
+
+El valor de referencia para la curva equipotencial será:
+
+\[V_{ref} = 0.41 \pm 0.04 [V]\]
+
+Y su campo eléctrico:
+
+\[E_{ref} = 5.17 \pm 0.52 [\frac{V}{m}]\]
 
 \begin{table}[h]
 \centering
@@ -188,10 +274,23 @@ La interpolación de los puntos permitió trazar las curvas equipotenciales, las
 ( 5, 4) &  0.31\\
 ( 6,5 ) & 0.32 \\
 \midrule
-\textbf{Promedio} &  \\
+\textbf{Promedio} &  0.35 V\\
 \bottomrule
 \end{tabular}
 \end{table}
+
+Para la tabla 6 de mediciones, se obtuvieron los siguientes valores:
+
+\[S_V = 0.09\]
+\[\delta = 0.04\]
+
+El valor de referencia para la curva equipotencial será:
+
+\[V_{ref} = 0.35 \pm 0.04 [V]\]
+
+Y su campo eléctrico:
+
+\[E_{ref} = 4.47 \pm 0.05 [\frac{V}{m}]\]
 
 \subsection*{Montaje dos: Barra - Barra}
 
@@ -216,10 +315,23 @@ El análisis de las curvas equipotenciales demostró que estas se aproximan a fo
 ( -3,-3 ) &  -0.35\\
 ( -3,-4 ) & -0.34 \\
 \midrule
-\textbf{Promedio} &  \\
+\textbf{Promedio} &  -0.35 V\\
 \bottomrule
 \end{tabular}
 \end{table}
+
+Para la tabla 7 de mediciones, se obtuvieron los siguientes valores:
+
+\[S_V = 0.01\]
+\[\delta = 0.006\]
+
+El valor de referencia para la curva equipotencial será:
+
+\[V_{ref} = -0.358 \pm 0.006 [V]\]
+
+Y su campo eléctrico:
+
+\[E_{ref} = -4.475 \pm 0.082 [\frac{V}{m}]\]
 
 \begin{table}[h]
 \centering
@@ -230,14 +342,27 @@ El análisis de las curvas equipotenciales demostró que estas se aproximan a fo
 \midrule
 ( -4,0 ) & -0.42 \\
 ( -4,4 ) & -0.40 \\
-( -4,-2) & -0. 40 \\
+( -4,-2) & -0.40 \\
 ( -4,-4 ) & -0.40 \\
 (-4 ,-5) &  -0.38\\
 \midrule
-\textbf{Promedio} &  \\
+\textbf{Promedio} &  -0.4 V\\
 \bottomrule
 \end{tabular}
 \end{table}
+
+Para la tabla 8 de mediciones, se obtuvieron los siguientes valores:
+
+\[S_V = 0.01\]
+\[\delta = 0.006\]
+
+El valor de referencia para la curva equipotencial será:
+
+\[V_{ref} = -0.4 \pm 0.006\]
+
+Y su campo eléctrico:
+
+\[E_{ref} = -5 \pm 0.079\]
 
 \subsubsection*{Lado Derecho}
 
@@ -248,16 +373,29 @@ El análisis de las curvas equipotenciales demostró que estas se aproximan a fo
 \toprule
 \textbf{Coordenadas (x,y) [cm]} & \textbf{Voltaje (V)} \\
 \midrule
-(3 ,0 ) &  0.03\\
-(3 ,4 ) &  0.019\\
-( 3, -2) &  0.022\\
-( 3, -3) &  0.026\\
-( 3, -5) & 0.018 \\
+(3 ,0 ) &  0.3\\
+(3 ,4 ) &  0.19\\
+( 3, -2) &  0.22\\
+( 3, -3) &  0.26\\
+( 3, -5) & 0.18 \\
 \midrule
-\textbf{Promedio} &  \\
+\textbf{Promedio} &  0.229 [V]\\
 \bottomrule
 \end{tabular}
 \end{table}
+
+Para la tabla 9 de mediciones, se obtuvieron los siguientes valores:
+
+\[S_V = 0.04\]
+\[\delta = 0.02\]
+
+El valor de referencia para la curva equipotencial será:
+
+\[V_{ref} = 0.22 \pm 0.02 [V]\]
+
+Y su campo eléctrico:
+
+\[E_{ref} = 2.87 \pm 0.27 [\frac{V}{m}]\]
 
 \begin{table}[h]
 \centering
@@ -266,16 +404,29 @@ El análisis de las curvas equipotenciales demostró que estas se aproximan a fo
 \toprule
 \textbf{Coordenadas (x,y) [cm]} & \textbf{Voltaje (V)} \\
 \midrule
-( 4,0 ) & 0,03 \\
-( 4,2 ) & 0.04 \\
-( 4,4 ) & 0.04 \\
-( 4,-2 ) & 0.06 \\
-(4,-4 ) & 0.06 \\
+( 4,0 ) & 0.32 \\
+( 4,2 ) & 0.44 \\
+( 4,4 ) & 0.48 \\
+( 4,-2 ) & 0.62 \\
+(4,-4 ) & 0.63 \\
 \midrule
-\textbf{Promedio} &  \\
+\textbf{Promedio} &  0.49 V\\
 \bottomrule
 \end{tabular}
 \end{table}
+
+Para la tabla 10 de mediciones, se obtuvieron los siguientes valores:
+
+\[S_V = 0.13\]
+\[\delta = 0.05\]
+
+El valor de referencia para la curva equipotencial será:
+
+\[V_{ref} = 0.49 \pm 0.05 [V]\]
+
+Y su campo eléctrico:
+
+\[E_{ref} = 6.22 \pm 0\]
 
 
 
@@ -303,10 +454,23 @@ El trazado de las curvas equipotenciales reveló un patrón híbrido único, con
 ( 4,-3) &  0.13\\
 (4 ,-4 ) & 0.18 \\
 \midrule
-\textbf{Promedio} &  \\
+\textbf{Promedio} &  0.21 V\\
 \bottomrule
 \end{tabular}
 \end{table}
+
+Para la tabla 11 de mediciones, se obtuvieron los siguientes valores:
+
+\[S_V = 0.06 \]
+\[\delta = 0.02 \]
+
+El valor de referencia para la curva equipotencial será:
+
+\[V_{ref} = 0.21 \pm 0.02 [V]\]
+
+Y su campo eléctrico:
+
+\[E_{ref} = 2.67 \pm 0.34 [\frac{V}{m}]\]
 
 \begin{table}[h]
 \centering
@@ -316,15 +480,28 @@ El trazado de las curvas equipotenciales reveló un patrón híbrido único, con
 \textbf{Coordenadas (x,y) [cm]} & \textbf{Voltaje (V)} \\
 \midrule
 ( 2,0 ) & 0.11 \\
-( 2, 2 ) & 0.029 \\
-( 2,4 ) & 0.035 \\
-( 2,-2 ) & 0.035 \\
-( 2,-4 ) & 0.038 \\
+( 2, 2 ) & 0.29 \\
+( 2,4 ) & 0.35 \\
+( 2,-2 ) & 0.35 \\
+( 2,-4 ) & 0.38 \\
 \midrule
-\textbf{Promedio} &  \\
+\textbf{Promedio} &  0.29\\
 \bottomrule
 \end{tabular}
 \end{table}
+
+Para la tabla 12 de mediciones, se obtuvieron los siguientes valores:
+
+\[S_V = 0.1\]
+\[\delta = 0.04\]
+
+El valor de referencia para la curva equipotencial será:
+
+\[V_{ref} = 0.29 \pm 0.04 [V]\]
+
+Y su campo eléctrico:
+
+\[E_{ref} = 3.69 \pm 0.06 [\frac{V}{m}]\]
 
 \subsection*{Lado Izquierdo}
 
@@ -341,10 +518,23 @@ El trazado de las curvas equipotenciales reveló un patrón híbrido único, con
 (-8 ,4 ) &  -0.92\\
 ( -6, -2) &  -0.95\\
 \midrule
-\textbf{Promedio} &  \\
+\textbf{Promedio} &  -0.89 V\\
 \bottomrule
 \end{tabular}
 \end{table}
+
+Para la tabla 13 de mediciones, se obtuvieron los siguientes valores:
+
+\[S_V = 0.05\]
+\[\delta = 0.02\]
+
+El valor de referencia para la curva equipotencial será:
+
+\[V_{ref} = -0.895 \pm 0.02 [V]\]
+
+Y su campo eléctrico:
+
+\[E_{ref} = -11.2 \pm 0.31\]
 
 \begin{table}[h]
 \centering
@@ -359,10 +549,23 @@ El trazado de las curvas equipotenciales reveló un patrón híbrido único, con
 (-8 ,-5 ) &  -0.74\\
 (-6 ,-4 ) & -0.6 \\
 \midrule
-\textbf{Promedio} &  \\
+\textbf{Promedio} &  -0.63 V\\
 \bottomrule
 \end{tabular}
 \end{table}
+
+Para la tabla 14 de mediciones, se obtuvieron los siguientes valores:
+
+\[S_V = 0.09\]
+\[\delta = 0.04\]
+
+El valor de referencia para la curva equipotencial será:
+
+\[V_{ref} = -0.63 \pm 0.04 [V]\]
+
+Y su campo eléctrico:
+
+\[E_{ref} = -7.95 \pm 0.51 [\frac{V}{m}]\]
 
 
 \section{Análisis de Resultados}
