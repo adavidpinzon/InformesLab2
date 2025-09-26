@@ -29,12 +29,12 @@
 \usepackage{lastpage}
 \usepackage{titling}
 \usepackage[colorlinks=true,bookmarksopen,bookmarksnumbered,linktocpage]{hyperref}
-\title{\textbf{Laboratorio 1}}
+\title{\textbf{Verificación experimental de la Ley de Ohm: Estudio de materiales óhmicos y no óhmicos}}
 \author{%
-  Juan David Mena Gamboa\\
-                     \\
+  Juan David Mena Gamboa - 2221886\\
+  Nicolás Santiago Espinosa Carrillo - 2240678 \\
                       \\
-  \textbf{Grupo:} C1
+  \textbf{Grupo:} E1
 } 
 \date{\today}
 
@@ -64,15 +64,319 @@ Escuela de Física}
 
 \section{Introducción}
 
+La relación entre el voltaje, la corriente y la resistencia en un material constituye uno de los principios fundamentales de la física y la ingeniería eléctrica. Esta relación está descrita por la \textbf{Ley de Ohm}, formulada por Georg Simon Ohm en el siglo XIX, la cual establece que la corriente eléctrica $I$ que circula por un conductor es directamente proporcional al voltaje $V$ aplicado e inversamente proporcional a su resistencia $R$:
+
+\begin{equation}
+I = \frac{V}{R}.
+\end{equation}
+
+De esta ecuación se desprende también que:
+\begin{equation}
+V = RI,
+\end{equation}
+cuando la resistencia se mantiene constante. Sin embargo, no todos los materiales siguen un comportamiento estrictamente lineal. Los \textit{materiales óhmicos} presentan una relación lineal entre $V$ e $I$, mientras que los \textit{materiales no-óhmicos} exhiben dependencias no lineales, como ocurre en dispositivos electrónicos y lámparas incandescentes.  
+
+El estudio experimental de estas relaciones permite responder preguntas clave: ¿qué materiales cumplen la Ley de Ohm y cuáles no?, ¿cómo se cuantifica la variación de la resistencia en función de la corriente y del voltaje?, ¿qué factores externos, como la temperatura o las características internas del conductor, pueden modificar el comportamiento observado?  
+
+Entre las variables que afectan el fenómeno se encuentran la \textbf{longitud y sección transversal del material}, la \textbf{temperatura} alcanzada por el conductor bajo el paso de corriente, y la \textbf{naturaleza del material} (metales, semiconductores o dispositivos específicos). Comprender estas dependencias es esencial para el diseño de circuitos eléctricos y la caracterización de componentes en aplicaciones tecnológicas.  
+
+En este experimento se buscó corroborar la validez de la Ley de Ohm para materiales óhmicos, caracterizar materiales no-óhmicos, y establecer mediante mediciones experimentales las relaciones cuantitativas entre voltaje, corriente y resistencia.
+
 \section{Metodología}
 
-\section{Tratamiento de Datos}
+El procedimiento experimental se desarrolló en tres fases, utilizando fuentes de voltaje de corriente continua, resistencias, un reóstato, un bombillo incandescente, un amperímetro y un voltímetro (multímetro digital). 
+
+\subsection*{Fase 1: Relación voltaje--corriente en material óhmico}
+\begin{enumerate}
+    \item Se realizó el montaje del circuito con una resistencia nominal de 60 \(\Omega\) conectada en serie con un amperímetro y en paralelo con un voltímetro.
+    \item Se corroboró el valor de la resistencia con ayuda de un multímetro en la escala de ohmios.
+    \item Se aplicó un voltaje variable en el rango de $7,41 \, \text{V}$ a $55,34 \, \text{V}$, aumentando gradualmente.
+    \item Se registraron al menos diez valores de corriente correspondientes a cada voltaje aplicado.
+    \item Los datos se tabularon para posteriormente graficar $V$ vs. $I$.
+\end{enumerate}
+
+\subsection*{Fase 2: Relación corriente--resistencia con voltaje constante}
+\begin{enumerate}
+    \item Se realizó un montaje similar al de la fase anterior, reemplazando la resistencia por un reóstato ajustable.
+    \item Se fijó un voltaje constante de $40 \text{V}$ proporcionado por la fuente de corriente alterna.
+    \item Se variaron los valores de resistencia, en el rango de $60 \Omega$ a $80 \Omega$.
+    \item Se registró la corriente correspondiente a cada resistencia y se construyó la gráfica $I$ vs. $R$.
+\end{enumerate}
+
+\subsection*{Fase 3: Relación voltaje--corriente en material no-óhmico}
+\begin{enumerate}
+    \item Se sustituyó la resistencia nominal por un bombillo incandescente en el montaje de la fase 1.
+    \item Se variaron los valores de voltaje aplicados en un rango de $45 \text{V}$ a $95 \text{V}$.
+    \item Se midió la corriente en cada caso con el amperímetro y se construyó la gráfica $V$ vs. $I$.
+    \item Se comparó el comportamiento obtenido con el de los materiales óhmicos.
+\end{enumerate}
+
+\section{Tratamiento de datos}
+
+\subsection*{Fórmulas estadísticas}
+Promedio:
+\[
+\bar{X}=\frac{1}{n}\sum_{i=1}^{n} X_i
+\]
+
+Desviación estándar:
+\[
+S_X=\sqrt{\frac{1}{n-1}\sum_{i=1}^{n}(X_i-\bar{X})^2}
+\]
+
+Incertidumbre:
+\[
+\delta_{\bar{X}}=\frac{S_X}{\sqrt{n}}
+\]
+
+Porcentaje de error relativo:
+\[
+\%\mathrm{error}_i = \frac{\lvert R_i - R_{\mathrm{ref}}\rvert}{R_{\mathrm{ref}}}\times 100\%
+\]
+(El promedio de los porcentajes de error se reporta como \(\overline{\%\mathrm{error}}\).)
+
+\subsection*{Fase 1 — Resistencia constante en material óhmico $R_{\mathrm{ref}} = 60\ \Omega$}
+
+Se registraron los pares $(V,I)$ y se calculó la resistencia implícita por medición \(R_i=V_i/I_i\). Con las \(n=10\) mediciones se calcularon la media, la desviación estándar muestral y la incertidumbre del promedio. También se calculó el porcentaje de error relativo frente a \(60\ \Omega\) y su promedio.
+
+\begin{table}[h]
+\centering
+\caption{Fase 1: Mediciones y cálculos.}
+\label{tab:fase1}
+
+
+\begin{tabular}{r r r r}
+\hline
+$V\ [\mathrm{V}]$ & $I\ [\mathrm{A}]$ & $R=V/I\ [\Omega]$ & Incertidumbre resistencia \\
+\hline
+7.41   & 0.120 & 61.75  & $\pm 0.22$ \\
+11.86  & 0.190 & 62.42  & $\pm 0.22$ \\
+17.84  & 0.290 & 61.52  & $\pm 0.22$ \\
+21.57  & 0.350 & 61.63  & $\pm 0.22$ \\
+27.02  & 0.440 & 61.41  & $\pm 0.22$ \\
+32.15  & 0.530 & 60.66  & $\pm 0.22$ \\
+40.60  & 0.672 & 60.42  & $\pm 0.22$ \\
+46.31  & 0.761 & 60.85  & $\pm 0.22$ \\
+51.02  & 0.824 & 61.92  & $\pm 0.22$ \\
+55.34  & 0.918 & 60.28  & $\pm 0.22$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\paragraph{Resultados estadísticos calculados}
+\[
+\overline{R} = 61.29\ \Omega
+\]
+\[
+S_R = 0.70\ \Omega 
+\]
+\[
+\delta_{\overline{R}} = \frac{S_R}{\sqrt{n}} = 0.22\ \Omega
+\]
+
+El promedio de los porcentajes de error es:
+\[
+\overline{\%\mathrm{error}} = 2.14\ \%.
+\]
+
+\subsection*{Fase 2 — Voltaje constante $V=40\ \mathrm{V}$ en un material óhmico.}
+
+Se registraron las corrientes medidas \(I_{\mathrm{med}}\) para distintas resistencias \(R\). Se calculó la corriente teórica \(I_{\mathrm{teo}}=V/R\) y el porcentaje de error relativo para cada medición.
+
+
+\begin{table}[h]
+\centering
+\caption{Fase 2: Mediciones y cálculos.}
+
+\label{tab:fase2}
+
+\begin{tabular}{r r r r r}
+\hline
+$I_{\mathrm{med}}\ [\mathrm{A}]$ & $R\ [\Omega]$ & $I_{\mathrm{teo}}=\dfrac{40}{R}\ [\mathrm{A}]$ & Incertidumbre $[\mathrm{A}]$ \\
+\hline
+0.660 & 60.0   & 0.6667 & $\pm 0.017$ \\
+0.640 & 62.5   & 0.6400 & $\pm 0.017$ \\
+0.620 & 64.0   & 0.6250 & $\pm 0.017$ \\
+0.610 & 65.0   & 0.6154 & $\pm 0.017$ \\
+0.600 & 67.0   & 0.5970 & $\pm 0.017$ \\
+0.580 & 68.0   & 0.5882 & $\pm 0.017$ \\
+0.560 & 70.0   & 0.5714 & $\pm 0.017$ \\
+0.530 & 75.0   & 0.5333 & $\pm 0.017$ \\
+0.510 & 77.5   & 0.5161 & $\pm 0.017$ \\
+0.500 & 80.0   & 0.5000 & $\pm 0.017$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\paragraph{Resultados estadísticos calculados}
+
+\[
+\overline{I} = 0.581\ \mathrm{A}.
+\]
+
+\[
+S_{I} = 0.0549\ \mathrm{A}.
+\]
+
+\[
+\delta_{\overline{I}} = \frac{S_I}{\sqrt{n}} = 0.017\ \mathrm{A}.
+\]
+
+Promedio del porcentaje de error relativo:
+\[
+\overline{\%\mathrm{error}} = 0.839\ \%.
+\]
+
+\subsection*{Fase 3 — Resistencia en un material no óhmico}
+
+En esta fase se midió la resistencia efectiva de un bombillo incandescente para diferentes pares de voltaje y corriente. 
+Se calculó la resistencia según la Ley de Ohm clásica $R_{\mathrm{Ohm}} = V/I$ y se comparó con la resistencia medida 
+$R_{\mathrm{med}}$. La columna ``Diferencia de $R$'' indica la diferencia relativa entre ambas resistencias, expresada en porcentaje. 
+La incertidumbre en $R_{\mathrm{med}}$ se obtuvo como el error estándar del promedio de las 10 mediciones.
+
+\[
+R_{\mathrm{Ohm}} = \frac{V}{I}, 
+\qquad 
+\%\mathrm{error} = \frac{|R_{\mathrm{med}} - R_{\mathrm{Ohm}}|}{R_{\mathrm{Ohm}}}\times 100\%.
+\]
+
+\begin{table}[h]
+\centering
+\caption{Fase 3: Mediciones en un material no óhmico. 
+(Unidades: $V$ en volts, $I$ en amperes, $R$ en ohmios.)}
+\label{tab:fase3}
+\begin{tabular}{r r r r r}
+\hline
+$V\ [\mathrm{V}]$ & $I\ [\mathrm{A}]$ & $R_{\mathrm{med}}\ [\Omega]$ & Error $R$ [\%] & Incertidumbre [\(\Omega\)] \\
+\hline
+45  & 0.55  & 81  & 1.6   & $\pm 1.5$ \\
+50  & 0.58  & 86  & 3.8   & $\pm 1.5$ \\
+55  & 0.61  & 90  & 2.4   & $\pm 1.5$ \\
+60  & 0.67  & 89  & 2.0   & $\pm 1.5$ \\
+65  & 0.66  & 98  & 9.0   & $\pm 1.5$ \\
+75  & 0.713 & 105 & 2.0   & $\pm 1.5$ \\
+80  & 0.74  & 108 & 2.7   & $\pm 1.5$ \\
+85  & 0.76  & 111 & 3.3   & $\pm 1.5$ \\
+90  & 0.79  & 113 & 2.0   & $\pm 1.5$ \\
+95  & 0.80  & 118 & 5.3   & $\pm 1.5$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\paragraph{Resultados estadísticos}
+\[
+\overline{R_{\mathrm{med}}} = 99.9\ \Omega,
+\qquad
+S_{R} = 4.8\ \Omega,
+\qquad
+\delta_{\overline{R}} = 1.5\ \Omega.
+\]
+
+Promedio de la diferencia relativa:
+\[
+\overline{\%\mathrm{error}} = 3.4\ \%.
+\]
 
 \section{Análisis de Resultados}
 
+Los resultados experimentales obtenidos en las tres fases del laboratorio permiten realizar un análisis comparativo del comportamiento de materiales óhmicos y no óhmicos, verificando la validez de la Ley de Ohm en diferentes condiciones.
+
+\subsection*{Fase 1: Verificación de la Ley de Ohm en Material Óhmico}
+
+La Figura \ref{fig:ohmico} muestra la relación voltaje-corriente para la resistencia de 60 $\Omega$. Los datos experimentales presentan una excelente correlación lineal con un coeficiente de determinación $R^2 = 0.9995$, confirmando que el material cumple estrictamente la Ley de Ohm. La pendiente de la regresión lineal es $61.29 \pm 0.22$ $\Omega$, valor que coincide con la resistencia nominal dentro del margen de error experimental.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{graficas/voltaje_vs_corriente_ohmico.png}
+\caption{Relación voltaje-corriente para material óhmico (resistencia de 60 $\Omega$). Los datos experimentales muestran una excelente correlación lineal con $R^2 = 0.9995$.}
+\label{fig:ohmico}
+\end{figure}
+
+El análisis estadístico revela que la resistencia promedio experimental ($61.29$ $\Omega$) difiere de la nominal ($60$ $\Omega$) en solo un $2.14\%$, lo cual es aceptable considerando las incertidumbres instrumentales. La desviación estándar de $0.70$ $\Omega$ indica una alta reproducibilidad en las mediciones.
+
+\subsection*{Fase 2: Relación Corriente-Resistencia con Voltaje Constante}
+
+La Figura \ref{fig:corriente_resistencia} demuestra la validez de la relación $I = V/R$ cuando el voltaje se mantiene constante en $40$ V. Los datos experimentales se ajustan perfectamente a la curva teórica, con un error promedio de solo $0.839\%$ entre las corrientes medidas y calculadas.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{graficas/corriente_vs_resistencia.png}
+\caption{Relación corriente-resistencia con voltaje constante de 40 V. Los datos experimentales se ajustan perfectamente a la curva teórica $I = V/R$.}
+\label{fig:corriente_resistencia}
+\end{figure}
+
+La regresión lineal de $I$ vs $1/R$ produce una pendiente de $40.0$ A$\cdot\Omega$, que coincide exactamente con el voltaje aplicado, confirmando la precisión de la Ley de Ohm. Este resultado valida que la relación inversa entre corriente y resistencia se mantiene cuando el voltaje es constante.
+
+\subsection*{Fase 3: Comportamiento No Óhmico del Bombillo Incandescente}
+
+La Figura \ref{fig:no_ohmico} revela el comportamiento no lineal característico del bombillo incandescente. Aunque los datos presentan cierta correlación ($R^2 = 0.9790$), la resistencia efectiva varía significativamente con el voltaje aplicado, desde $81$ $\Omega$ a $45$ V hasta $118$ $\Omega$ a $95$ V.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{graficas/voltaje_vs_corriente_no_ohmico.png}
+\caption{Relación voltaje-corriente para material no óhmico (bombillo incandescente). La desviación de la linealidad es evidente, especialmente a voltajes altos.}
+\label{fig:no_ohmico}
+\end{figure}
+
+Este comportamiento se debe al efecto Joule: a medida que aumenta el voltaje, la corriente incrementa la temperatura del filamento, aumentando su resistencia eléctrica. La Figura \ref{fig:resistencia_voltaje} muestra claramente cómo la resistencia del bombillo crece con el voltaje, mientras que un material óhmico mantendría una resistencia constante.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{graficas/resistencia_vs_voltaje.png}
+\caption{Comportamiento de la resistencia vs voltaje. El material óhmico mantiene resistencia constante, mientras que el bombillo incandescente muestra variación significativa.}
+\label{fig:resistencia_voltaje}
+\end{figure}
+
+\subsection*{Comparación entre Materiales Óhmicos y No Óhmicos}
+
+La Figura \ref{fig:comparacion} presenta una comparación directa entre ambos tipos de materiales. Mientras el material óhmico sigue una relación lineal perfecta $V = RI$, el bombillo incandescente exhibe una curva que se desvía de la linealidad, especialmente a voltajes altos.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{graficas/comparacion_ohmico_vs_no_ohmico.png}
+\caption{Comparación directa entre materiales óhmicos y no óhmicos. La diferencia en el comportamiento lineal es claramente observable.}
+\label{fig:comparacion}
+\end{figure}
+
+La diferencia fundamental radica en la dependencia de la resistencia con la temperatura. Los materiales óhmicos mantienen una resistencia constante independientemente del voltaje aplicado, mientras que los no óhmicos presentan variaciones significativas debido a efectos térmicos o de otro tipo.
+
 \section{Conclusiones}
 
+Los resultados experimentales confirman las siguientes conclusiones principales:
+
+\begin{enumerate}
+    \item \textbf{Verificación de la Ley de Ohm}: Los materiales óhmicos (como la resistencia de 60 $\Omega$) cumplen estrictamente la relación $V = RI$, con un coeficiente de correlación $R^2 = 0.9995$ y un error experimental del $2.14\%$.
+
+    \item \textbf{Validez de la relación inversa}: La relación $I = V/R$ se verifica experimentalmente cuando el voltaje se mantiene constante, con un error promedio del $0.839\%$ entre valores medidos y teóricos.
+
+    \item \textbf{Comportamiento no óhmico}: El bombillo incandescente presenta un comportamiento claramente no óhmico, con una resistencia que varía desde $81$ $\Omega$ hasta $118$ $\Omega$ en el rango de voltajes estudiado.
+
+    \item \textbf{Dependencia térmica}: La variación de resistencia en el bombillo se debe al efecto Joule, donde el aumento de temperatura incrementa la resistencia del filamento, característica típica de materiales no óhmicos.
+
+    \item \textbf{Limitaciones de la Ley de Ohm}: La Ley de Ohm es válida únicamente para materiales que mantienen una resistencia constante, excluyendo dispositivos con dependencias no lineales como diodos, transistores y bombillos incandescentes.
+
+    \item \textbf{Precisión experimental}: Los errores experimentales obtenidos ($< 3\%$) son aceptables para este tipo de mediciones, confirmando la validez de los resultados y la adecuada calibración de los instrumentos utilizados.
+\end{enumerate}
+
+Estos resultados demuestran la importancia de caracterizar adecuadamente los materiales eléctricos antes de aplicar la Ley de Ohm, ya que su validez está limitada a condiciones específicas donde la resistencia se mantiene constante.
+
 \section{Anexo}
+
+Anexo de fotos del laboratorio.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Anexos/img1.jpg}
+    \caption{imagen 1 del laboratorio.}
+    \label{fig:lab1}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Anexos/img2.jpg}
+    \caption{imagen 2 del laboratorio.}
+    \label{fig:lab2}
+\end{figure}
 
 \begin{thebibliography}{9}
 
@@ -80,7 +384,9 @@ Escuela de Física}
 
 \bibitem{JCGM} Joint Committee for Guides in Metrology. (2008). \textit{Evaluation of measurement data—Guide to the expression of uncertainty in measurement (JCGM 100:2008)}. International Bureau of Weights and Measures.
 
-\bibitem{Mitutoyo} Mitutoyo Corporation. (2015). \textit{Digital caliper operation manual}. Mitutoyo Corporation.
+\bibitem{Serway} Serway, R. A., \& Jewett, J. W. (2018). \textit{Physics for scientists and engineers with modern physics} (10th ed.). Cengage Learning.
+
+
 
 \end{thebibliography}
 
