@@ -1,0 +1,172 @@
+Formación para la Investigación 
+Escuela de Física, Facultad de Ciencias 
+Universidad Industrial de Santander 
+Construimos Futuro 
+
+I7.	ESTUDIO	DE	DIFERENTES	CONFIGURACIONES	DE	
+TRANSFORMADORES	
+
+OBJETIVO GENERAL 
+
+Estudio de diferentes configuraciones de transformadores. 
+
+OBJETIVOS ESPECÍFICOS 
+
+•  Estudiar las características eléctricas de un transformador. 
+•  Corroborar experimentalmente, las relaciones de transformación para cada una de las 
+
+configuraciones del Transformador. 
+
+•  Determinar la potencia disipada en un transformador real. 
+
+MATERIALES	
+
+•  Yugo o  núcleo. 
+•  Bobinas 
+•  2 amperímetros 
+•  2 voltímetros  
+•  Bombillo 
+•  Autotransformador de CA 
+•  Cables de conexión. 
+
+ 
+	
+ 
+ 
+ 
+	
+ 
+ 
+	
+	
+Formación para la Investigación 
+Escuela de Física, Facultad de Ciencias 
+Universidad Industrial de Santander 
+Construimos Futuro 
+
+CALCULOS	Y	MEDICIONES	
+
+I.  A)																								𝑁$	=	___________				𝑁%	=	__________		con		𝑁$ > 𝑁%			
+
+𝑉$	[V]	
+
+𝑉%	[V]	
+
+Tabla 1. Datos para determinar la relación entre el voltaje en la bobina primaria (Vp) y el 
+voltaje en la bobina secundario (Vs) configuración de transformador elevador  
+
+B)																									𝑁$	=	___________				𝑁%	=	__________	con	𝑁$ < 𝑁%			
+
+𝑉$	[V]	
+
+𝑉%	[V]	
+
+Tabla 2. Datos para determinar la relación entre el voltaje en la bobina primaria (Vp) y el 
+voltaje en la bobina secundario (Vs) configuración de transformador reductor.  
+
+II. 
+
+												Np		=	_______________														Rp	=	________________												Pp	=	Vp	*	Ip 
+
+Ns	=	________________													Rs	=	________________												Ps	=	Vs	*	Is	
+
+CASOS	
+
+Vp		[V]	
+
+Ip		[A]	
+
+Pp		[W]	
+
+Vp		[V]	
+
+Ip		[A]	
+
+Ps		[W]	
+
+3	Lámparas	en	serie	
+
+2	Lámparas	en	serie	
+
+1	Lámpara	
+
+2	Lámparas	en	paralelo	
+
+3	Lámparas	de	paralelo	
+
+Tabla 3. Datos para determinar la potencia real de un trasformador con una configuración 
+
+de transformador reductor 
+
+Este  material  fue  desarrollado  por  Melba  Johanna  Sánchez  Soledad,  B.Sc,  Oscar  Mauricio  Forero 
+
+Quintero y Rogelio Ospina Ospina Ph.D, en el marco del proyecto titulado “Fortalecimiento de las capacidades 
+
+científicas  y  tecnológicas  para  lograr  una  mejor  formación  para  la  investigación  por  medio  de  mejores 
+
+laboratorios  de  física  para  ciencia  e  ingeniería”,  fase  1:  re-enfoque  metodológico.  Para  el  desarrollo  de  esta 
+
+actividad  se  contó  con  el  apoyo  de  Dr.  Jorge  Humberto  Martínez  Téllez,  Director  de  la  Escuela  de  Física, 
+
+David Alejandro  Miranda  Mercado,  Ph.D,  Decano  de  la  Facultad  de  Ciencias,  Vicerrectora Académica  de  la 
+
+Universidad Industrial de Santander. 
+
+Bucaramanga, Mayo de 2017 
+
+ 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+ 
+ 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+

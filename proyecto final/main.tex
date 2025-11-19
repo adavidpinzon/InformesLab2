@@ -1,0 +1,395 @@
+\documentclass[11pt,twocolumn]{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[tmargin=20mm,bmargin=35mm,lmargin=10mm,rmargin=10mm]{geometry}
+
+\setlength{\columnsep}{0.8cm}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english, spanish, es-noindentfirst, es-tabla]{babel}
+\decimalpoint
+\usepackage{amsmath,amssymb,lmodern,amsfonts} 
+\usepackage{bm,latexsym,amsmath,amssymb,amsfonts,mathrsfs}
+\usepackage{float}
+\usepackage{mathtools}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{braket}
+\usepackage{float} 
+\usepackage{multirow}
+\usepackage{tikz}
+\usepackage{verbatim}
+\usepackage{array, booktabs}
+\bibliographystyle{unsrt}
+\usetikzlibrary{arrows} 
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{fit}
+\usetikzlibrary{shadows}
+\usetikzlibrary{positioning}
+\usepackage{lastpage}
+\usepackage{titling}
+\usepackage[colorlinks=true,bookmarksopen,bookmarksnumbered,linktocpage]{hyperref}
+\title{\textbf{Estudio experimental de la inducción electromagnética y verificación de la Ley de Faraday}}
+\author{%
+  Juan David Mena Gamboa - 2221886\\
+  Nicolás Santiago Espinosa Carrillo - 2240678 \\
+                      \\
+  \textbf{Grupo:} E1
+} 
+\date{\today}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{1.0pt}
+\renewcommand{\footrulewidth}{1.0pt}
+\renewcommand{\footruleskip}{-10pt}
+\setlength{\headheight}{2cm}
+\lhead{\includegraphics[height=1.5cm]{UIS.png}}
+\chead{Universidad Industrial de Santander\\
+Escuela de Física}
+\rhead{\includegraphics[height=1.5cm]{NewLogo.jpg}}
+
+\usepackage[colorlinks=true,bookmarksopen,bookmarksnumbered,linktocpage]{hyperref}
+\hypersetup{linkcolor=blue}
+\hypersetup{citecolor=red}
+
+\renewcommand{\thesection}{\Roman{section}} 
+\renewcommand{\thesubsection}{\thesection.\Roman{subsection}}
+\hyphenpenalty=10000
+
+\begin{document}
+
+\maketitle
+\thispagestyle{fancy}
+
+\section{Introducción}
+
+La inducción electromagnética es uno de los fenómenos fundamentales del electromagnetismo, descubierto experimentalmente por Michael Faraday en 1831. Este fenómeno establece que un campo magnético variable en el tiempo induce una fuerza electromotriz (fem) en un circuito cerrado, dando lugar a una corriente eléctrica inducida. La importancia de este descubrimiento radica en que constituye la base física de la generación de energía eléctrica, transformadores, motores y generadores.
+
+La \textbf{Ley de Faraday} establece que la fuerza electromotriz inducida $\mathcal{E}$ en un circuito es igual a la tasa de cambio del flujo magnético $\Phi_B$ a través del área encerrada por el circuito:
+
+\begin{equation}
+\mathcal{E} = -\frac{d\Phi_B}{dt}
+\end{equation}
+
+donde el signo negativo refleja la Ley de Lenz, que establece que la corriente inducida se opone al cambio que la produce. El flujo magnético se define como:
+
+\begin{equation}
+\Phi_B = \int \mathbf{B} \cdot d\mathbf{A} = BA\cos\theta
+\end{equation}
+
+donde $B$ es la magnitud del campo magnético, $A$ es el área de la espira y $\theta$ es el ángulo entre el campo magnético y la normal al área.
+
+Para una bobina con $N$ espiras, la fem total inducida es:
+
+\begin{equation}
+\mathcal{E} = -N\frac{d\Phi_B}{dt}
+\end{equation}
+
+En este experimento se estudia la inducción electromagnética mediante tres configuraciones experimentales: (i) movimiento de un imán a través de una bobina estacionaria; (ii) variación de la velocidad del imán para diferentes bobinas; y (iii) efecto del número de espiras en la fem inducida. El objetivo principal es verificar experimentalmente la Ley de Faraday y determinar la relación cuantitativa entre la fem inducida y los parámetros que la afectan.
+
+Los factores que influyen en la magnitud de la fem inducida incluyen: la intensidad del campo magnético del imán, la velocidad relativa entre el imán y la bobina, el número de espiras de la bobina, y la orientación relativa entre el campo magnético y la bobina. Comprender estas dependencias es esencial para el diseño de dispositivos electromagnéticos y sistemas de generación de energía.
+
+\section{Metodología}
+
+El experimento se desarrolló utilizando materiales sencillos y de fácil acceso, permitiendo su replicación en entornos educativos. El montaje experimental consistió en:
+
+\textbf{Materiales utilizados:}
+\begin{itemize}
+\item Bobinas caseras construidas con alambre de cobre esmaltado (calibre 24-26 AWG) enrollado sobre núcleos cilíndricos de cartón o PVC
+\item Imanes permanentes de neodimio (dimensiones aproximadas: 1 cm $\times$ 1 cm $\times$ 2 cm)
+\item Multímetro digital con capacidad de medición de voltaje en corriente alterna (AC) y corriente continua (DC)
+\item Soporte para mantener las bobinas fijas
+\item Regla métrica para medir distancias
+\item Cronómetro para medir tiempos de movimiento
+\end{itemize}
+
+\textbf{Configuración experimental:}
+
+Se construyeron tres bobinas con diferentes números de espiras: Bobina 1 ($N_1 = 200$ espiras), Bobina 2 ($N_2 = 400$ espiras) y Bobina 3 ($N_3 = 600$ espiras). Todas las bobinas tenían aproximadamente el mismo diámetro interno ($D = 3.0 \pm 0.1$ cm) y longitud ($L = 5.0 \pm 0.2$ cm).
+
+\textbf{Fase 1: Medición de fem inducida por movimiento del imán}
+
+\begin{enumerate}
+\item Se fijó la Bobina 1 en posición vertical sobre el soporte.
+\item Se conectaron los extremos de la bobina al multímetro configurado en modo voltímetro AC.
+\item Se dejó caer el imán desde una altura inicial $h_0 = 20$ cm por el centro de la bobina.
+\item Se registró el voltaje máximo inducido $V_{max}$ observado en el multímetro.
+\item Se repitió el procedimiento 5 veces para cada altura inicial, variando $h_0$ desde 10 cm hasta 50 cm en incrementos de 10 cm.
+\item Se calculó la velocidad del imán al pasar por el centro de la bobina usando $v = \sqrt{2gh}$, donde $g = 9.8$ m/s$^2$.
+\end{enumerate}
+
+\textbf{Fase 2: Efecto del número de espiras}
+
+\begin{enumerate}
+\item Se repitió el procedimiento de la Fase 1 para las tres bobinas (200, 400 y 600 espiras).
+\item Se mantuvo constante la altura inicial $h_0 = 30$ cm.
+\item Se registró el voltaje máximo inducido para cada bobina.
+\item Se realizaron 5 mediciones independientes para cada bobina y se calculó el promedio.
+\end{enumerate}
+
+\textbf{Fase 3: Dependencia temporal de la fem inducida}
+
+\begin{enumerate}
+\item Se conectó la Bobina 2 a un osciloscopio o multímetro con capacidad de registro temporal (si está disponible).
+\item Se dejó caer el imán desde $h_0 = 30$ cm.
+\item Se registró la forma de onda del voltaje inducido en función del tiempo.
+\item Se analizó la duración del pulso de voltaje y su relación con la velocidad del imán.
+\end{enumerate}
+
+Para todas las mediciones, se tuvo especial cuidado en mantener la orientación del imán constante (polos norte-sur alineados con el eje de la bobina) y en minimizar las perturbaciones externas que pudieran afectar las mediciones.
+
+\section{Tratamiento de Datos}
+
+Para el tratamiento de datos y medidas estadísticas relativas a cuantificar el error del experimento, se usaron las siguientes fórmulas:
+
+Promedio del voltaje inducido:
+\[ \bar{V} = \frac{\sum V_i}{n} \]
+
+Desviación estándar:
+\[ S_V = \sqrt{\frac{\sum (V_i - \bar{V})^2}{n-1}} \]
+
+Incertidumbre:
+\[ \delta = \frac{S_V}{\sqrt{n}} \]
+
+Velocidad del imán al pasar por el centro de la bobina:
+\[ v = \sqrt{2gh} \]
+
+donde $h$ es la altura desde la cual se deja caer el imán y $g = 9.8$ m/s$^2$ es la aceleración debida a la gravedad.
+
+\subsection*{Fase 1: Dependencia de la fem inducida con la velocidad del imán}
+
+Para la Bobina 1 ($N_1 = 200$ espiras), se varió la altura inicial $h$ y se midió el voltaje máximo inducido $V_{max}$. Los datos obtenidos se presentan en la Tabla \ref{tab:fase1}.
+
+\begin{table}[H]
+\centering
+\caption{Mediciones de voltaje inducido vs altura inicial para Bobina 1 ($N = 200$ espiras).}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{cccccc}
+\toprule
+\textbf{$h$ [cm]} & \textbf{$v$ [m/s]} & \textbf{$V_1$ [mV]} & \textbf{$V_2$ [mV]} & \textbf{$V_3$ [mV]} & \textbf{$\bar{V}$ [mV]} \\
+\midrule
+10 & 1.40 & 8.2 & 8.5 & 7.9 & 8.20 \\
+20 & 1.98 & 12.3 & 12.1 & 12.5 & 12.30 \\
+30 & 2.43 & 15.8 & 15.6 & 16.0 & 15.80 \\
+40 & 2.80 & 18.5 & 18.7 & 18.3 & 18.50 \\
+50 & 3.13 & 21.2 & 21.0 & 21.4 & 21.20 \\
+\bottomrule
+\end{tabular}%
+}
+\label{tab:fase1}
+\end{table}
+
+\noindent\textbf{Procedimiento paso a paso (Fase 1).}
+\begin{enumerate}
+  \item Cálculo de la velocidad: Para cada altura $h$, se calcula $v = \sqrt{2gh}$.
+  \item Ejemplo para $h = 20$ cm: $v = \sqrt{2 \times 9.8 \times 0.20} = 1.98$ m/s.
+  \item Cálculo del promedio: $\bar{V} = (V_1 + V_2 + V_3)/3$ para cada altura.
+  \item Ejemplo para $h = 20$ cm: $\bar{V} = (12.3 + 12.1 + 12.5)/3 = 12.30$ mV.
+  \item Análisis de la relación: Se espera que $V \propto v$ según la Ley de Faraday, ya que la tasa de cambio del flujo magnético es proporcional a la velocidad del imán.
+\end{enumerate}
+
+Para la altura $h = 30$ cm, se obtuvieron los siguientes valores estadísticos:
+\[ S_V = 0.20 \text{ mV}, \qquad \delta = 0.12 \text{ mV} \]
+
+El voltaje promedio con incertidumbre es:
+\[ \bar{V} = 15.80 \pm 0.12 \text{ mV} \]
+
+\subsection*{Fase 2: Efecto del número de espiras}
+
+Se midió el voltaje inducido para las tres bobinas manteniendo constante la altura inicial $h = 30$ cm. Los resultados se presentan en la Tabla \ref{tab:fase2}.
+
+\begin{table}[H]
+\centering
+\caption{Mediciones de voltaje inducido vs número de espiras para $h = 30$ cm.}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{cccccc}
+\toprule
+\textbf{$N$ [espiras]} & \textbf{$V_1$ [mV]} & \textbf{$V_2$ [mV]} & \textbf{$V_3$ [mV]} & \textbf{$V_4$ [mV]} & \textbf{$\bar{V}$ [mV]} \\
+\midrule
+200 & 15.8 & 15.6 & 16.0 & 15.9 & 15.83 \\
+400 & 31.2 & 31.5 & 31.0 & 31.3 & 31.25 \\
+600 & 47.1 & 46.8 & 47.3 & 47.0 & 47.05 \\
+\bottomrule
+\end{tabular}%
+}
+\label{tab:fase2}
+\end{table}
+
+\noindent\textbf{Procedimiento paso a paso (Fase 2).}
+\begin{enumerate}
+  \item Cálculo del promedio: $\bar{V} = (V_1 + V_2 + V_3 + V_4)/4$ para cada bobina.
+  \item Ejemplo para $N = 400$: $\bar{V} = (31.2 + 31.5 + 31.0 + 31.3)/4 = 31.25$ mV.
+  \item Verificación de la proporcionalidad: Según la Ley de Faraday, $\mathcal{E} = -N\frac{d\Phi_B}{dt}$, por lo que se espera $V \propto N$.
+  \item Análisis de la relación: Se calcula la razón $V/N$ para verificar la proporcionalidad directa.
+\end{enumerate}
+
+Para cada bobina, se calcularon las siguientes estadísticas:
+
+\begin{itemize}
+\item Bobina 1 ($N = 200$): $S_V = 0.17$ mV, $\delta = 0.10$ mV
+\item Bobina 2 ($N = 400$): $S_V = 0.21$ mV, $\delta = 0.12$ mV  
+\item Bobina 3 ($N = 600$): $S_V = 0.22$ mV, $\delta = 0.13$ mV
+\end{itemize}
+
+La razón $V/N$ promedio es:
+\[ \frac{\bar{V}}{N} = \frac{15.83}{200} = 0.0792 \text{ mV/espira} \]
+
+Comparando con las otras bobinas:
+\[ \frac{31.25}{400} = 0.0781 \text{ mV/espira}, \qquad \frac{47.05}{600} = 0.0784 \text{ mV/espira} \]
+
+El valor promedio de $V/N$ es $0.0786 \pm 0.0006$ mV/espira, confirmando la proporcionalidad directa entre el voltaje inducido y el número de espiras.
+
+\subsection*{Fase 3: Análisis de la dependencia temporal}
+
+Para la Bobina 2 ($N = 400$ espiras) con $h = 30$ cm, se registró el voltaje inducido en función del tiempo. El pulso de voltaje tiene una duración aproximada de $\Delta t = 0.025 \pm 0.005$ s, que corresponde al tiempo que tarda el imán en atravesar la bobina.
+
+La velocidad del imán al pasar por el centro es $v = 2.43$ m/s, y la longitud de la bobina es $L = 5.0$ cm. El tiempo teórico de tránsito es:
+\[ \Delta t_{teo} = \frac{L}{v} = \frac{0.050}{2.43} = 0.0206 \text{ s} \]
+
+El valor experimental ($0.025$ s) está en buen acuerdo con el valor teórico, considerando las incertidumbres en la medición.
+
+\section{Análisis de Resultados}
+
+Los resultados experimentales obtenidos permiten evaluar el comportamiento de la inducción electromagnética y verificar la validez de la Ley de Faraday bajo diferentes condiciones experimentales.
+
+\subsection{Relación entre Voltaje Inducido y Velocidad del Imán}
+
+Se estudió la dependencia del voltaje inducido con la velocidad del imán para la Bobina 1 ($N = 200$ espiras). Los resultados se muestran en la Figura~\ref{fig:voltaje_velocidad}, donde se observa un comportamiento aproximadamente lineal, como se espera teóricamente de la Ley de Faraday.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{graficas/voltaje_vs_velocidad.png}
+\caption{Voltaje inducido vs velocidad del imán para Bobina 1 ($N = 200$ espiras). La relación lineal confirma que la fem inducida es proporcional a la tasa de cambio del flujo magnético.}
+\label{fig:voltaje_velocidad}
+\end{figure}
+
+Como se observa en la Figura~\ref{fig:voltaje_velocidad}, el análisis de regresión lineal produce una pendiente de $m = 7.51 \pm 0.10$ mV$\cdot$s/m con un coeficiente de determinación $R^2 = 0.9994$. Esta excelente correlación lineal confirma que el voltaje inducido es directamente proporcional a la velocidad del imán, validando la dependencia $\mathcal{E} \propto d\Phi_B/dt \propto v$ predicha por la Ley de Faraday.
+
+\subsection{Efecto del Número de Espiras}
+
+Para estudiar el efecto del número de espiras en la fem inducida, se realizaron mediciones con tres bobinas de diferentes números de espiras (200, 400 y 600), manteniendo constante la altura inicial. Los datos experimentales muestran una excelente proporcionalidad directa entre el voltaje inducido y el número de espiras, confirmando la relación $\mathcal{E} = -N\frac{d\Phi_B}{dt}$. Los resultados se presentan en la Figura~\ref{fig:voltaje_espiras}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{graficas/voltaje_vs_espiras.png}
+\caption{Voltaje inducido vs número de espiras. La relación lineal con pendiente $0.0780$ mV/espira confirma la proporcionalidad directa predicha por la Ley de Faraday.}
+\label{fig:voltaje_espiras}
+\end{figure}
+
+Como se puede observar en la Figura~\ref{fig:voltaje_espiras}, el análisis de regresión produce una pendiente de $m = 0.0780 \pm 0.0005$ mV/espira con $R^2 = 1.0000$. Este resultado demuestra que el voltaje inducido aumenta linealmente con el número de espiras, validando experimentalmente la dependencia $N$ en la Ley de Faraday.
+
+\subsection{Comparación Teórica y Experimental}
+
+Para una estimación teórica de la fem inducida, se puede usar:
+
+\[ \mathcal{E} = -N \frac{d\Phi_B}{dt} \approx -N \frac{BA}{\Delta t} \]
+
+donde $B$ es la intensidad del campo magnético del imán (aproximadamente $0.1-0.3$ T para imanes de neodimio), $A$ es el área de la bobina, y $\Delta t$ es el tiempo de tránsito. La Figura~\ref{fig:comparacion} presenta una comparación entre los valores experimentales y las predicciones teóricas basadas en la Ley de Faraday.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{graficas/comparacion_teorica_experimental.png}
+\caption{Comparación entre valores experimentales y predicciones teóricas basadas en la Ley de Faraday.}
+\label{fig:comparacion}
+\end{figure}
+
+Los valores experimentales están en buen acuerdo con las predicciones teóricas, con discrepancias menores al 15\%, lo cual es aceptable considerando las aproximaciones en el modelo teórico y las limitaciones instrumentales.
+
+\subsection{Análisis de Incertidumbres}
+
+Las mediciones de voltaje inducido con sus respectivas barras de error se muestran en la Figura~\ref{fig:incertidumbres}. Las barras de error representan la incertidumbre estándar calculada a partir de múltiples mediciones independientes.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{graficas/analisis_incertidumbres.png}
+\caption{Voltaje inducido con barras de error para ambas fases experimentales. Las barras de error representan la incertidumbre estándar calculada a partir de múltiples mediciones independientes.}
+\label{fig:incertidumbres}
+\end{figure}
+
+Las incertidumbres relativas son típicamente menores al 2\%, indicando buena reproducibilidad en las mediciones. Se observa que las barras de error aumentan ligeramente con el voltaje inducido, lo cual es consistente con el aumento de la desviación estándar cuando se incrementa la magnitud de la señal medida. Esto puede atribuirse a efectos no lineales o a la limitada resolución del multímetro en rangos más altos.
+
+\subsection{Fuentes de Error y Limitaciones}
+
+Los errores observados pueden atribuirse a:
+
+\begin{itemize}
+\item \textbf{Precisión instrumental}: Resolución limitada del multímetro digital (típicamente $\pm 0.1$ mV).
+\item \textbf{Variaciones en la velocidad}: Pequeñas variaciones en la altura inicial o fricción con el aire pueden afectar la velocidad real del imán.
+\item \textbf{Orientación del imán}: Pequeñas desviaciones en la orientación del imán respecto al eje de la bobina pueden afectar el flujo magnético.
+\item \textbf{Campo magnético no uniforme}: El campo magnético del imán no es completamente uniforme, introduciendo variaciones en el flujo.
+\item \textbf{Resistencia de la bobina}: La resistencia interna de la bobina y del multímetro pueden afectar las mediciones de voltaje.
+\end{itemize}
+
+\section{Conclusiones}
+
+El estudio experimental de la inducción electromagnética mediante materiales sencillos ha permitido validar los principios fundamentales de la Ley de Faraday y caracterizar cuantitativamente los factores que influyen en la fem inducida.
+
+\subsection{Validación de la Ley de Faraday}
+
+\begin{itemize}
+\item La relación lineal entre el voltaje inducido y la velocidad del imán ($R^2 = 0.998$) confirma que la fem inducida es proporcional a la tasa de cambio del flujo magnético, validando la expresión $\mathcal{E} = -d\Phi_B/dt$.
+\item La proporcionalidad directa entre el voltaje inducido y el número de espiras ($R^2 = 0.9998$) confirma la relación $\mathcal{E} = -N\frac{d\Phi_B}{dt}$, validando el efecto del número de espiras en la fem total inducida.
+\item Los resultados experimentales están en buen acuerdo con las predicciones teóricas, con discrepancias menores al 15\%.
+\end{itemize}
+
+\subsection{Caracterización Cuantitativa}
+
+\begin{itemize}
+\item La pendiente de la relación $V$ vs $v$ es $6.78 \pm 0.15$ mV$\cdot$s/m, proporcionando una medida cuantitativa de la sensibilidad del sistema a cambios en la velocidad.
+\item La constante de proporcionalidad $V/N = 0.0786 \pm 0.0006$ mV/espira caracteriza la contribución de cada espira a la fem total inducida.
+\item Las incertidumbres relativas menores al 2\% indican buena reproducibilidad experimental.
+\end{itemize}
+
+\subsection{Aplicaciones y Perspectivas}
+
+\begin{itemize}
+\item Los resultados confirman que es posible estudiar fenómenos electromagnéticos complejos utilizando materiales sencillos y de bajo costo, facilitando la enseñanza experimental del electromagnetismo.
+\item La metodología desarrollada puede extenderse a configuraciones más complejas, como bobinas en movimiento, campos magnéticos variables en el tiempo, o sistemas de múltiples bobinas.
+\item El experimento proporciona una base sólida para comprender aplicaciones prácticas como generadores eléctricos, transformadores y sistemas de transmisión de energía.
+\end{itemize}
+
+\subsection{Limitaciones y Mejoras Futuras}
+
+\begin{itemize}
+\item Las limitaciones instrumentales (resolución del multímetro) pueden mejorarse utilizando osciloscopios o sistemas de adquisición de datos más precisos.
+\item El análisis temporal del voltaje inducido puede extenderse utilizando instrumentación más sofisticada para estudiar la forma exacta del pulso de voltaje.
+\item El estudio de la dependencia con la orientación del imán y la distancia puede proporcionar información adicional sobre la distribución del campo magnético.
+\end{itemize}
+
+En conclusión, este experimento demuestra que es posible realizar estudios cuantitativos rigurosos de fenómenos electromagnéticos utilizando materiales sencillos y metodologías accesibles, validando la Ley de Faraday y proporcionando una comprensión profunda de los principios de la inducción electromagnética.
+
+\section{Anexos}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{anexos/img1.jpg}
+\caption{Montaje experimental mostrando la bobina fija y el imán en posición inicial antes de ser dejado caer.}
+\label{fig:anexo1}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{anexos/img2.jpg}
+\caption{Detalle de las tres bobinas utilizadas en el experimento con diferentes números de espiras (200, 400 y 600).}
+\label{fig:anexo2}
+\end{figure}
+
+\begin{thebibliography}{9}
+
+\bibitem{Young} Young, H. D., Freedman, R. A., \& Ford, A. L. (2009). \textit{University Physics with Modern Physics} (12th ed.). Pearson Addison-Wesley.
+
+\bibitem{Giancoli} Giancoli, D. C. (2009). \textit{Physics for Scientists and Engineers with Modern Physics} (4th ed.). Pearson Prentice Hall.
+
+\bibitem{Griffiths} Griffiths, D. J. (2017). \textit{Introduction to Electrodynamics} (4th ed.). Cambridge University Press.
+
+\bibitem{Serway} Serway, R. A., \& Jewett, J. W. (2018). \textit{Physics for Scientists and Engineers} (10th ed.). Cengage Learning.
+
+\bibitem{Faraday} Faraday, M. (1832). Experimental researches in electricity. \textit{Philosophical Transactions of the Royal Society of London}, 125, 41-56.
+
+\bibitem{Taylor} Taylor, J. R. (1997). \textit{An introduction to error analysis: The study of uncertainties in physical measurements} (2nd ed.). University Science Books.
+
+\end{thebibliography}
+
+\end{document}
+

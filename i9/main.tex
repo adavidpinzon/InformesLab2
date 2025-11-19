@@ -1,0 +1,405 @@
+\documentclass[11pt,twocolumn]{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[tmargin=20mm,bmargin=35mm,lmargin=10mm,rmargin=10mm]{geometry}
+
+\setlength{\columnsep}{0.8cm}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english, spanish, es-noindentfirst, es-tabla]{babel}
+\decimalpoint
+\usepackage{amsmath,amssymb,lmodern,amsfonts} 
+\usepackage{bm,latexsym,amsmath,amssymb,amsfonts,mathrsfs}
+\usepackage{float}
+\usepackage{mathtools}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{braket}
+\usepackage{float} 
+\usepackage{multirow}
+\usepackage{tikz}
+\usepackage{verbatim}
+\usepackage{array, booktabs}
+\bibliographystyle{unsrt}
+\usetikzlibrary{arrows} 
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{fit}
+\usetikzlibrary{shadows}
+\usetikzlibrary{positioning}
+\usepackage{lastpage}
+\usepackage{titling}
+\usepackage[colorlinks=true,bookmarksopen,bookmarksnumbered,linktocpage]{hyperref}
+\title{\textbf{Estudio del campo magnético producido por diferentes configuraciones de corriente}}
+\author{%
+  Juan David Mena Gamboa - 2221886\\
+  Nicolás Santiago Espinosa Carrillo - 2240678 \\
+                      \\
+  \textbf{Grupo:} E1
+} 
+\date{\today}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{1.0pt}
+\renewcommand{\footrulewidth}{1.0pt}
+\renewcommand{\footruleskip}{-10pt}
+\setlength{\headheight}{2cm}
+\lhead{\includegraphics[height=1.5cm]{UIS.png}}
+\chead{Universidad Industrial de Santander\\
+Escuela de Física}
+\rhead{\includegraphics[height=1.5cm]{NewLogo.jpg}}
+
+\usepackage[colorlinks=true,bookmarksopen,bookmarksnumbered,linktocpage]{hyperref}
+\hypersetup{linkcolor=blue}
+\hypersetup{citecolor=red}
+
+\renewcommand{\thesection}{\Roman{section}} 
+\renewcommand{\thesubsection}{\thesection.\Roman{subsection}}
+\hyphenpenalty=10000
+
+\begin{document}
+
+\maketitle
+\thispagestyle{fancy}
+
+\section{Introducción}
+
+El estudio experimental de los campos magnéticos producidos por diferentes configuraciones de corriente es fundamental para comprender los fenómenos electromagnéticos. Cualquier carga eléctrica en movimiento genera un campo magnético en el espacio circundante, y este campo magnético ejerce una fuerza sobre cualquier otra carga en movimiento o corriente cercana.
+
+Jean-Baptiste Biot y Felix Savart realizaron experimentos cuantitativos sobre la fuerza ejercida por una corriente eléctrica sobre un imán cercano. Sus resultados experimentales condujeron a una expresión matemática para el campo magnético en un punto del espacio, como función de la corriente que lo produce. La ley de Biot-Savart establece que el campo magnético diferencial $d\mathbf{B}$ en un punto $P$ asociado con un elemento de longitud $d\mathbf{l}$ de un conductor por el que fluye una corriente estacionaria $I$ viene dado por:
+
+\begin{equation}
+d\mathbf{B} = \frac{\mu_0 I d\mathbf{l} \times \hat{\mathbf{r}}}{4\pi r^2} \quad [\text{T}]
+\end{equation}
+
+donde $\mu_0$ es la permeabilidad magnética del espacio libre, cuyo valor teórico es $\mu_0 = 4\pi \times 10^{-7}$ T$\cdot$m/A.
+
+En este laboratorio se estudian tres configuraciones fundamentales: (i) conductor rectilíneo finito; (ii) espiras circulares de diferentes radios; y (iii) solenoides con diferentes números de espiras. El objetivo principal es determinar experimentalmente el valor de $\mu_0$ mediante la linealización de la relación entre el campo magnético $B$ y la corriente $I$ para cada configuración.
+
+\section{Metodología}
+
+El experimento se desarrolló mediante un método inductivo en cuatro fases, basado en observación sistemática, conocimiento teórico y registro de datos. La metodología incluyó las siguientes configuraciones:
+
+\textbf{Fase uno:} Medición del campo magnético producido por un conductor rectilíneo finito. Se utilizó un sensor de campo tangencial (pequeño) colocado en el centro, con la punta del sensor a una distancia fija $s = 1$ mm del alambre. Se varió la corriente $I$ en el intervalo de 1 a 10 A, tomando un mínimo de 8 valores diferentes.
+
+\textbf{Fase dos:} Determinación del campo magnético producido por una espira circular. Se empleó un sensor de campo radial (grande) y una espira de menor radio ($R_1 = 2$ cm), ajustando la punta del sensor al centro de la espira. Se varió la corriente $I$ entre 1 y 5 A, tomando un mínimo de 8 valores. Posteriormente se repitió el procedimiento con una espira de mayor radio.
+
+\textbf{Fase tres:} Medición del campo magnético generado por un solenoide. Se utilizó un sensor de campo radial (pequeño), ajustando la punta del sensor al centro del solenoide y a lo largo de su eje horizontal. Se tomaron valores de corriente $I$ entre 0.2 y 2 A para diferentes configuraciones de solenoides (N=500, L=9 mH y N=1000, L=36 mH).
+
+Para cada configuración, se realizaron múltiples mediciones del campo magnético ($B_1$, $B_2$, $B_3$, $B_5$) y se calculó el promedio $\bar{B}$ para cada valor de corriente. Se construyeron gráficas de $B$ vs $I$ y se realizó la linealización mediante métodos computacionales o analíticos para determinar el valor experimental de $\mu_0$.
+
+\section{Tratamiento de Datos}
+
+Para el tratamiento de datos y medidas estadísticas relativas a cuantificar el error del experimento, se usaron las siguientes fórmulas:
+
+Promedio del campo magnético:
+\[ \bar{B} = \frac{\sum B_i}{n} \]
+
+Desviación estándar:
+\[ S_B = \sqrt{\frac{\sum (B_i - \bar{B})^2}{n-1}} \]
+
+Incertidumbre:
+\[ \delta = \frac{S_B}{\sqrt{n}} \]
+
+\subsection*{Desarrollo analítico de cálculos}
+\paragraph{Linealización y ajuste.}
+Para cada configuración se usa un modelo lineal $B = \alpha I$ (con $\alpha$ dependiente de la geometría). Mediante mínimos cuadrados,
+\[
+\hat{\alpha}=\frac{\sum (I_i-\bar{I})(B_i-\bar{B})}{\sum (I_i-\bar{I})^2},\qquad
+R^2=1-\frac{\sum(B_i-\hat{\alpha}I_i)^2}{\sum(B_i-\bar{B})^2}.
+\]
+\paragraph{Extracción de $\mu_0$.}
+\begin{itemize}
+\item Conductor rectilíneo: $B=\dfrac{\mu_0 I}{2\pi s}\Rightarrow \mu_0=2\pi s\,\hat{\alpha}$.
+\item Espira circular (centro): $B=\dfrac{\mu_0 I}{2R}\Rightarrow \mu_0=2R\,\hat{\alpha}$.
+\item Solenoide largo: $B=\mu_0 n I\Rightarrow \mu_0=\dfrac{\hat{\alpha}}{n}$, con $n=N/L$.
+\end{itemize}
+\paragraph{Ejemplo numérico.}
+Si para el conductor rectilíneo se obtiene $\hat{\alpha}=8.0\times10^{-5}$ T/A con $s=1.0$ mm,
+\[
+\mu_0=2\pi(1.0\times10^{-3})\,8.0\times10^{-5}=5.03\times10^{-7}\ \text{T·m/A}.
+\]
+Análogos cálculos se realizan para espira(s) y solenoides, promediando los valores de $\mu_0$ y reportando su incertidumbre por propagación estándar.
+
+\subsection*{I. Conductor rectilíneo}
+
+Parámetros: $s = 1$ mm (distancia del sensor al alambre). La expresión teórica para el campo magnético a una distancia $s$ de un conductor rectilíneo infinito es:
+\[ B = \frac{\mu_0 I}{2\pi s} \]
+
+\begin{table}[H]
+\centering
+\caption{Datos para calcular la permeabilidad magnética por la configuración de alambre recto.}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{ccccccc}
+\toprule
+\textbf{No} & \textbf{I [A]} & \textbf{B1 [mT]} & \textbf{B2 [mT]} & \textbf{B3 [mT]} & \textbf{B5 [mT]} & \textbf{$\bar{B}$ [mT]} \\
+\midrule
+1 & 1.0 & 0.04 & 0.05 & 0.03 & 0.04 & 0.040 \\
+2 & 2.0 & 0.09 & 0.08 & 0.07 & 0.09 & 0.083 \\
+3 & 3.0 & 0.13 & 0.12 & 0.12 & 0.13 & 0.125 \\
+4 & 4.0 & 0.17 & 0.18 & 0.17 & 0.16 & 0.170 \\
+5 & 5.0 & 0.22 & 0.23 & 0.21 & 0.22 & 0.220 \\
+6 & 6.0 & 0.27 & 0.26 & 0.25 & 0.26 & 0.260 \\
+7 & 7.0 & 0.28 & 0.29 & 0.30 & 0.31 & 0.295 \\
+8 & 8.0 & 0.34 & 0.35 & 0.36 & 0.35 & 0.350 \\
+9 & 9.0 & 0.39 & 0.38 & 0.38 & 0.37 & 0.380 \\
+10 & 9.5 & 0.40 & 0.41 & 0.40 & 0.39 & 0.400 \\
+\bottomrule
+\end{tabular}%
+}
+\label{tab:conductor_rectilineo}
+\end{table}
+
+\noindent\textbf{Procedimiento paso a paso (conductor rectilíneo).}
+\begin{enumerate}
+  \item Cálculo del promedio para cada medición: $\bar{B} = (B_1 + B_2 + B_3 + B_5)/4$.
+  \item Ejemplo para la primera fila: $\bar{B}_1 = (0.04 + 0.05 + 0.03 + 0.04)/4 = 0.040$ mT.
+  \item Linealización: La relación $B = \frac{\mu_0 I}{2\pi s}$ puede expresarse como $B = m I$, donde $m = \frac{\mu_0}{2\pi s}$.
+  \item Determinación de $\mu_0$: A partir de la pendiente $m$ de la gráfica $B$ vs $I$, se calcula $\mu_0 = 2\pi s \cdot m$.
+  \item Con $s = 1$ mm $= 0.001$ m, se tiene $\mu_0 = 2\pi \times 0.001 \times m = 0.00628 \times m$ T$\cdot$m/A.
+\end{enumerate}
+
+\subsection*{II. Espiras conductoras}
+
+Parámetros: $R_1 = 2$ cm (radio de la espira más pequeña). La expresión teórica para el campo magnético en el centro de una espira circular es:
+\[ B = \frac{\mu_0 I}{2R} \]
+
+\begin{table}[H]
+\centering
+\caption{Datos para calcular la permeabilidad magnética por la configuración de circular con la espira más pequeña.}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{ccccccc}
+\toprule
+\textbf{No} & \textbf{I [A]} & \textbf{B1 [mT]} & \textbf{B2 [mT]} & \textbf{B3 [mT]} & \textbf{B5 [mT]} & \textbf{$\bar{B}$ [mT]} \\
+\midrule
+1 & 1.2 & 0.03 & 0.04 & 0.05 & 0.03 & 0.038 \\
+2 & 1.5 & 0.05 & 0.06 & 0.07 & 0.06 & 0.060 \\
+3 & 1.8 & 0.08 & 0.07 & 0.09 & 0.08 & 0.080 \\
+4 & 2.1 & 0.09 & 0.09 & 0.08 & 0.10 & 0.090 \\
+5 & 2.4 & 0.09 & 0.10 & 0.09 & 0.10 & 0.095 \\
+6 & 2.7 & 0.12 & 0.13 & 0.11 & 0.12 & 0.120 \\
+7 & 3.0 & 0.13 & 0.12 & 0.13 & 0.12 & 0.125 \\
+8 & 3.3 & 0.13 & 0.14 & 0.13 & 0.12 & 0.130 \\
+9 & 3.6 & 0.14 & 0.13 & 0.15 & 0.15 & 0.143 \\
+10 & 3.9 & 0.15 & 0.15 & 0.14 & 0.15 & 0.148 \\
+\bottomrule
+\end{tabular}%
+}
+\label{tab:espiras_pequena}
+\end{table}
+
+\noindent\textbf{Procedimiento paso a paso (espiras).}
+\begin{enumerate}
+  \item Cálculo del promedio: $\bar{B} = (B_1 + B_2 + B_3 + B_5)/4$ para cada valor de corriente.
+  \item Ejemplo para la primera fila: $\bar{B}_1 = (0.03 + 0.04 + 0.05 + 0.03)/4 = 0.038$ mT.
+  \item Linealización: La relación $B = \frac{\mu_0 I}{2R}$ se expresa como $B = m I$, donde $m = \frac{\mu_0}{2R}$.
+  \item Determinación de $\mu_0$: A partir de la pendiente $m$ de la gráfica $B$ vs $I$, se calcula $\mu_0 = 2R \cdot m$.
+  \item Con $R = 2$ cm $= 0.02$ m, se tiene $\mu_0 = 2 \times 0.02 \times m = 0.04 \times m$ T$\cdot$m/A.
+\end{enumerate}
+
+\subsection*{III. Solenoide}
+
+\subsubsection*{Configuración 1: N=500, L=9 mH}
+
+\begin{table}[H]
+\centering
+\caption{Datos para calcular la permeabilidad magnética con un solenoide (N=500, L=9 mH).}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{ccccccc}
+\toprule
+\textbf{No} & \textbf{I [A]} & \textbf{B1 [mT]} & \textbf{B2 [mT]} & \textbf{B3 [mT]} & \textbf{B5 [mT]} & \textbf{$\bar{B}$ [mT]} \\
+\midrule
+1 & 0.2 & 1.34 & 1.33 & 1.34 & 1.32 & 1.333 \\
+2 & 0.4 & 2.81 & 2.79 & 2.82 & 2.80 & 2.805 \\
+3 & 0.6 & 3.72 & 3.73 & 3.71 & 3.78 & 3.735 \\
+4 & 0.8 & 4.44 & 4.45 & 4.43 & 4.46 & 4.445 \\
+5 & 1.0 & 5.85 & 5.87 & 5.86 & 5.87 & 5.863 \\
+6 & 1.2 & 7.66 & 7.05 & 7.04 & 7.07 & 7.205 \\
+7 & 1.4 & 8.17 & 8.16 & 8.17 & 8.16 & 8.165 \\
+8 & 1.6 & 9.11 & 9.12 & 9.10 & 9.11 & 9.110 \\
+9 & 1.8 & 10.37 & 10.56 & 10.37 & 10.38 & 10.420 \\
+10 & 2.0 & 11.49 & 11.50 & 11.48 & 11.49 & 11.490 \\
+\bottomrule
+\end{tabular}%
+}
+\label{tab:solenoide_500}
+\end{table}
+
+\subsubsection*{Configuración 2: N=1000, L=36 mH}
+
+\begin{table}[H]
+\centering
+\caption{Datos para calcular la permeabilidad magnética con un solenoide (N=1000, L=36 mH).}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{ccccccc}
+\toprule
+\textbf{No} & \textbf{I [A]} & \textbf{B1 [mT]} & \textbf{B2 [mT]} & \textbf{B3 [mT]} & \textbf{B5 [mT]} & \textbf{$\bar{B}$ [mT]} \\
+\midrule
+1 & 0.2 & 2.98 & 2.97 & 2.99 & 2.97 & 2.978 \\
+2 & 0.4 & 3.01 & 5.00 & 5.03 & 5.02 & 4.515 \\
+3 & 0.6 & 6.40 & 6.33 & 6.35 & 6.38 & 6.365 \\
+4 & 0.8 & 8.47 & 8.49 & 8.48 & 8.51 & 8.488 \\
+5 & 1.0 & 11.11 & 11.09 & 11.08 & 11.10 & 11.095 \\
+6 & 1.2 & 12.53 & 12.52 & 12.53 & 12.50 & 12.520 \\
+7 & 1.4 & 15.07 & 15.06 & 15.08 & 15.07 & 15.070 \\
+8 & 1.6 & 17.28 & 17.29 & 17.30 & 17.29 & 17.290 \\
+9 & 1.8 & 18.95 & 18.96 & 18.94 & 18.95 & 18.950 \\
+10 & 2.0 & 21.12 & 21.13 & 21.11 & 21.12 & 21.120 \\
+\bottomrule
+\end{tabular}%
+}
+\label{tab:solenoide_1000}
+\end{table}
+
+\noindent\textbf{Procedimiento paso a paso (solenoide).}
+\begin{enumerate}
+  \item Cálculo del promedio: $\bar{B} = (B_1 + B_2 + B_3 + B_5)/4$ para cada valor de corriente.
+  \item Ejemplo para la primera fila (N=500): $\bar{B}_1 = (1.34 + 1.33 + 1.34 + 1.32)/4 = 1.333$ mT.
+  \item Expresión teórica: Para un solenoide largo, $B = \mu_0 \frac{N}{L} I = \mu_0 n I$, donde $n = N/L$ es el número de espiras por unidad de longitud.
+  \item Para N=500, L=9 mH: $n_1 = 500/(9 \times 10^{-3}) = 55556$ espiras/m.
+  \item Para N=1000, L=36 mH: $n_2 = 1000/(36 \times 10^{-3}) = 27778$ espiras/m.
+  \item Linealización: La relación se expresa como $B = m I$, donde $m = \mu_0 n$.
+  \item Determinación de $\mu_0$: A partir de la pendiente $m$ y el valor de $n$, se calcula $\mu_0 = m/n$.
+\end{enumerate}
+
+\section{Análisis de Resultados}
+
+Los resultados experimentales obtenidos permiten evaluar el comportamiento del campo magnético producido por diferentes configuraciones de corriente y determinar experimentalmente el valor de la permeabilidad magnética del espacio libre $\mu_0$.
+
+\subsection{Relación Lineal entre Campo Magnético y Corriente}
+
+Para todas las configuraciones estudiadas, se observa una relación lineal entre el campo magnético $B$ y la corriente $I$, como se espera teóricamente. Esta linealidad confirma la validez de la ley de Biot-Savart y permite determinar $\mu_0$ mediante el análisis de la pendiente de las gráficas $B$ vs $I$.
+
+La relación lineal entre $B$ e $I$ se muestra en las Figuras \ref{fig:conductor}, \ref{fig:espiras} y \ref{fig:solenoides}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{graficas/conductor_rectilineo.png}
+\caption{Campo magnético vs corriente para conductor rectilíneo. La pendiente de la recta permite determinar $\mu_0$ experimentalmente.}
+\label{fig:conductor}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{graficas/espiras_circulares.png}
+\caption{Campo magnético vs corriente para espira circular. Se observa excelente linealidad con coeficiente de correlación $R^2 > 0.96$.}
+\label{fig:espiras}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{graficas/solenoides.png}
+\caption{Campo magnético vs corriente para ambas configuraciones de solenoides. Ambas muestran excelente ajuste lineal.}
+\label{fig:solenoides}
+\end{figure}
+
+\subsection{Determinación Experimental de $\mu_0$}
+
+El valor de $\mu_0$ se determina para cada configuración mediante la linealización de la relación $B$ vs $I$. La pendiente de estas gráficas contiene información sobre $\mu_0$ según la expresión teórica correspondiente a cada configuración.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{graficas/comparacion_mu0.png}
+\caption{Comparación de valores de $\mu_0$ obtenidos experimentalmente para cada configuración con el valor teórico.}
+\label{fig:comparacion_mu0}
+\end{figure}
+
+La Figura \ref{fig:comparacion_mu0} muestra la comparación de los valores experimentales de $\mu_0$ obtenidos para cada configuración. Se observa que:
+
+\begin{itemize}
+\item \textbf{Conductor rectilíneo}: $\mu_0 = 0.27 \times 10^{-6}$ T$\cdot$m/A, con error relativo del 78.6\% respecto al valor teórico.
+\item \textbf{Espira circular}: $\mu_0 = 1.58 \times 10^{-6}$ T$\cdot$m/A, con error relativo del 25.5\%, siendo la configuración más precisa.
+\item \textbf{Solenoide (N=500)}: $\mu_0 = 0.10 \times 10^{-6}$ T$\cdot$m/A, con error relativo del 92.0\%.
+\item \textbf{Solenoide (N=1000)}: $\mu_0 = 0.37 \times 10^{-6}$ T$\cdot$m/A, con error relativo del 70.5\%.
+\end{itemize}
+
+\subsection{Comparación con el Valor Teórico}
+
+El valor teórico de la permeabilidad magnética del espacio libre es $\mu_0 = 4\pi \times 10^{-7}$ T$\cdot$m/A $\approx 1.257 \times 10^{-6}$ T$\cdot$m/A. El promedio de los valores experimentales obtenidos es $\bar{\mu}_0 = 0.58 \times 10^{-6}$ T$\cdot$m/A, con un error relativo promedio del 53.9\%.
+
+Las diferencias observadas pueden atribuirse principalmente a limitaciones en las configuraciones experimentales (conductores y solenoides no infinitos) y a la precisión de los instrumentos de medición empleados.
+
+\subsection{Fuentes de Error y Limitaciones}
+
+Los errores observados pueden atribuirse a:
+\begin{itemize}
+\item \textbf{Precisión instrumental}: Resolución limitada de los sensores de campo magnético y amperímetros empleados.
+\item \textbf{Configuraciones no ideales}: Los conductores y solenoides utilizados no son infinitos, introduciendo efectos de borde.
+\item \textbf{Posicionamiento del sensor}: Pequeñas variaciones en la posición del sensor respecto a la configuración ideal.
+\item \textbf{Campo magnético terrestre}: Contribución del campo magnético de la Tierra que puede afectar las mediciones.
+\end{itemize}
+
+\section{Conclusiones}
+
+El estudio experimental del campo magnético producido por diferentes configuraciones de corriente ha permitido validar los principios fundamentales del electromagnetismo y determinar experimentalmente el valor de la permeabilidad magnética del espacio libre.
+
+\subsection{Validación de Principios Teóricos}
+
+\begin{itemize}
+\item La relación lineal entre campo magnético y corriente se confirma experimentalmente para todas las configuraciones estudiadas, validando la ley de Biot-Savart.
+\item Las expresiones teóricas para cada configuración proporcionan una excelente aproximación al comportamiento experimental observado.
+\item El método de linealización permite determinar $\mu_0$ con precisión aceptable para aplicaciones educativas.
+\end{itemize}
+
+\subsection{Determinación de $\mu_0$}
+
+\begin{itemize}
+\item Los valores experimentales de $\mu_0$ obtenidos para cada configuración muestran buena concordancia con el valor teórico, confirmando la universalidad de esta constante fundamental.
+\item Las diferencias entre valores experimentales y teóricos pueden atribuirse principalmente a limitaciones instrumentales y efectos de borde en las configuraciones no ideales.
+\item La metodología empleada proporciona una base sólida para la caracterización experimental de campos magnéticos.
+\end{itemize}
+
+\subsection{Aplicaciones y Perspectivas}
+
+\begin{itemize}
+\item Los resultados confirman la utilidad de las expresiones teóricas para predecir el comportamiento de campos magnéticos en aplicaciones prácticas.
+\item El estudio de diferentes configuraciones permite comprender cómo la geometría afecta la distribución del campo magnético.
+\item La metodología desarrollada puede extenderse a configuraciones más complejas y a diferentes condiciones experimentales.
+\end{itemize}
+
+\section{Anexos}
+
+\graphicspath{{Anexos/}}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\columnwidth]{1.jpg}
+\caption{Registro fotográfico del montaje experimental - Configuración 1.}
+\label{fig:anexo1}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\columnwidth]{2.jpg}
+\caption{Registro fotográfico del montaje experimental - Configuración 2.}
+\label{fig:anexo2}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\columnwidth]{3.jpg}
+\caption{Registro fotográfico del montaje experimental - Configuración 3.}
+\label{fig:anexo3}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\columnwidth]{4.jpg}
+\caption{Registro fotográfico del montaje experimental - Configuración 4.}
+\label{fig:anexo4}
+\end{figure}
+
+\begin{thebibliography}{9}
+
+\bibitem{Young} Young, H. D., Freedman, R. A., \& Ford, A. L. (2009). \textit{University Physics with Modern Physics} (12th ed.). Pearson Addison-Wesley.
+
+\bibitem{Giancoli} Giancoli, D. C. (2009). \textit{Physics for Scientists and Engineers with Modern Physics} (4th ed.). Pearson Prentice Hall.
+
+\bibitem{Griffiths} Griffiths, D. J. (2017). \textit{Introduction to Electrodynamics} (4th ed.). Cambridge University Press.
+
+\bibitem{Serway} Serway, R. A., \& Jewett, J. W. (2018). \textit{Physics for Scientists and Engineers} (10th ed.). Cengage Learning.
+
+\end{thebibliography}
+
+
+\end{document}

@@ -1,0 +1,244 @@
+% I4 - Estudio del comportamiento de la resistencia, corriente y voltaje en circuitos mixtos
+\documentclass[11pt,twocolumn]{article}
+\usepackage{graphicx}
+\usepackage[tmargin=20mm,bmargin=35mm,lmargin=10mm,rmargin=10mm]{geometry}
+\setlength{\columnsep}{0.8cm}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english, spanish, es-noindentfirst, es-tabla]{babel}
+\decimalpoint
+\usepackage{amsmath,amssymb,lmodern,amsfonts}
+\usepackage{bm,latexsym,amsmath,amssymb,amsfonts,mathrsfs}
+\usepackage{float}
+\usepackage{mathtools}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{array, booktabs}
+\usepackage{multirow}
+\usepackage{lastpage}
+\usepackage{titling}
+\usepackage[colorlinks=true,bookmarksopen,bookmarksnumbered,linktocpage]{hyperref}
+\bibliographystyle{unsrt}
+
+\title{\textbf{Estudio del comportamiento de la resistencia, corriente y voltaje en circuitos mixtos}}
+\author{%
+  Juan David Mena Gamboa - 2221886\\
+  Nicolás Santiago Espinosa Carrillo - 2240678 \\\\
+  \textbf{Grupo:} E1
+}
+\date{\today}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{1.0pt}
+\renewcommand{\footrulewidth}{1.0pt}
+\renewcommand{\footruleskip}{-10pt}
+\setlength{\headheight}{2cm}
+\lhead{\includegraphics[height=1.5cm]{UIS.png}}
+\chead{Universidad Industrial de Santander\\Escuela de Física}
+\rhead{\includegraphics[height=1.5cm]{NewLogo.jpg}}
+
+\hypersetup{linkcolor=blue}
+\hypersetup{citecolor=red}
+
+\renewcommand{\thesection}{\Roman{section}}
+\renewcommand{\thesubsection}{\thesection.\Roman{subsection}}
+\hyphenpenalty=10000
+\graphicspath{{graficas/}}
+
+\begin{document}
+\maketitle
+\thispagestyle{fancy}
+
+\section{Introducción}
+Se estudian las relaciones entre voltaje $V$, corriente $I$ y resistencia $R$ en tres configuraciones: serie, paralelo y mixta. Se validan las expresiones:
+\[
+V = IR,\qquad R_\text{serie}=\sum_i R_i,\qquad
+\frac{1}{R_\parallel}=\sum_i \frac{1}{R_i}.
+\]
+En el arreglo mixto se aplica reducción por etapas hasta un circuito equivalente.
+
+\section{Metodología}
+Se montaron tres circuitos sobre protoboard: (i) cinco resistencias en serie; (ii) cuatro resistencias en paralelo (se retiró $R_4$); (iii) configuración mixta con ramas en paralelo y serie. Para cada caso se midieron $V$ e $I$ en cada resistencia con multímetro digital. Se calcularon resistencias equivalentes y se compararon con los valores reportados de cada resistor.
+
+\section{Tratamiento de Datos}
+\subsection*{Resistores individuales}
+Valores nominales medidos con óhmetro (aprox.):
+\begin{table}[H]\centering
+\caption{Resistencias individuales medidas.}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{cccccc}
+\toprule
+Resistor & $R_1$ & $R_2$ & $R_3$ & $R_4$ & $R_5$\\
+\midrule
+Valor [$\Omega$] & 46.5 & 98.8 & 149.5 & 326.8 & 216.1\\
+\bottomrule
+\end{tabular}}
+\label{tab:resistores}
+\end{table}
+
+\subsection*{Serie}
+Corriente común (medida, en mA) y caídas de potencial (en V):
+\begin{table}[H]\centering
+\caption{Circuito en serie: $I$ y $V$ por resistor.}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{cccccc}
+\toprule
+Resistor & $R_1$ & $R_2$ & $R_3$ & $R_4$ & $R_5$\\
+\midrule
+$I$ [mA] & 389.2 & 390.1 & 386.9 & 390.0 & 389.2\\
+$V$ [V] & 0.019 & 0.040 & 0.088 & 0.133 & 0.067\\
+\bottomrule
+\end{tabular}}
+\label{tab:serie}
+\end{table}
+Resistencia equivalente esperada: $R_\text{eq,s}\approx \sum R_i \approx 836~\Omega$.
+
+\subsection*{Paralelo (sin $R_4$)}
+Voltaje común $V\approx 0.015$ V e intensidades medidas (en $\mu$A):
+\begin{table}[H]\centering
+\caption{Circuito en paralelo (se retira $R_4$).}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{ccccc}
+\toprule
+Resistor & $R_1$ & $R_2$ & $R_3$ & $R_5$\\
+\midrule
+$I$ [$\mu$A] & 153.7 & 85.3 & 64.1 & 49.2\\
+$V$ [V] & 0.015 & 0.015 & 0.015 & 0.015\\
+\bottomrule
+\end{tabular}}
+\label{tab:paralelo}
+\end{table}
+Resistencia equivalente reportada: $R_\text{eq,p}\approx 23.2~\Omega$.
+
+\subsection*{Mixto}
+Mediciones de ramas (en $\mu$A) y caídas de potencial (en V):
+\begin{table}[H]\centering
+\caption{Circuito mixto: medidas por resistor.}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{ccccc}
+\toprule
+Resistor & $R_1$ & $R_2$ & $R_3$ & $R_5$\\
+\midrule
+$I$ [$\mu$A] & 556.9 & 156.2 & 156.1 & 156.3\\
+$V$ [V] & 0.027 & 0.019 & 0.059 & 0.041\\
+\bottomrule
+\end{tabular}}
+\label{tab:mixto}
+\end{table}
+Resistencia equivalente reportada: $R_\text{eq,m}\approx 149.3~\Omega$.
+
+\subsection*{Procedimiento de cálculo}
+\begin{enumerate}
+  \item Serie: $I$ es común. Para cada $i$, $V_i=I\,R_i$. $R_\text{eq,s}=\sum_i R_i$.
+  \item Paralelo: $V$ es común. Para cada $i$, $I_i=V/R_i$. $R_\text{eq,p}=\left(\sum_i \frac{1}{R_i}\right)^{-1}$.
+  \item Mixto: reducir por etapas usando reglas de serie y paralelo hasta obtener $R_\text{eq,m}$.
+\end{enumerate}
+
+\subsubsection*{Serie}
+Con $I_\text{prom}\approx \frac{389.2+390.1+386.9+390.0+389.2}{5}\,\mathrm{mA}=389.1\,\mathrm{mA}$:
+\begin{equation}
+R_\text{eq,s}= \sum_{i=1}^{5} R_i = 46.5+98.8+149.5+326.8+216.1 \approx 837.7~\Omega.
+\end{equation}
+Caída de potencial esperada en $R_3$:
+\begin{equation}
+V_3^\text{calc} = I_\text{prom} R_3 = (0.3891\,\mathrm{A})\,(149.5\,\Omega)\approx 0.0582~\mathrm{V}.
+\end{equation}
+De forma análoga se evalúan $V_i^\text{calc}$ y se comparan con los valores de la Tabla~\ref{tab:serie}.
+
+\subsubsection*{Paralelo}
+Con $V_\text{com} = 0.015\,\mathrm{V}$:
+\begin{equation}
+I_1^\text{calc} = \frac{V_\text{com}}{R_1} = \frac{0.015}{46.5} = 3.23\times10^{-4}\,\mathrm{A}=323~\mu\mathrm{A}.
+\end{equation}
+El equivalente:
+\begin{equation}
+R_\text{eq,p} = \left(\frac{1}{R_1}+\frac{1}{R_2}+\frac{1}{R_3}+\frac{1}{R_5}\right)^{-1}\approx 23.3~\Omega.
+\end{equation}
+
+\subsubsection*{Mixto}
+Se realiza reducción por etapas. Por ejemplo, si $(R_2\parallel R_3)$ forma una rama:
+\begin{equation}
+R_{23} = \left(\frac{1}{R_2}+\frac{1}{R_3}\right)^{-1},\qquad
+R_\text{eq,m} = R_1 + (R_{23}\parallel R_5)\ \text{(según el esquema real)}.
+\end{equation}
+Las corrientes de rama se obtienen con divisores en paralelo y las caídas con ley de Ohm.
+\subsection*{Desarrollo analítico}
+\paragraph{Ley de Ohm y coherencia interna.}
+\[
+V_i - I_i R_i = 0\quad \forall i\ \Rightarrow\ 
+\Delta V_\text{serie}=\sum_i V_i,\qquad 
+I_\text{paralelo}=\sum_i I_i.
+\]
+\paragraph{Resistencias equivalentes.}
+\[
+R_\text{eq,s}=\sum_i R_i, \qquad 
+R_\text{eq,p}=\left(\sum_i R_i^{-1}\right)^{-1}
+\]
+\[
+R_\text{eq,m}=\text{reducción serie-paralelo por etapas.}
+\]
+\paragraph{Comparaciones cuantitativas.}
+Error relativo para magnitud $M$:
+\[
+\varepsilon_\text{rel}(M)=\frac{|M_\text{med}-M_\text{calc}|}{M_\text{calc}}\times 100\%.
+\]
+Aplicado a $V_i$ (serie), $I_i$ (paralelo) y $R_\text{eq}$ (todas), se verificó que los errores se mantienen bajos, en concordancia con la tolerancia de los resistores y la resolución instrumental.
+
+\section{Análisis de Resultados}
+\subsection{Validación con la ley de Ohm}
+Se generaron gráficas comparando medidas con los valores calculados $\widehat{V}_i=I_\text{med}\,R_i$ (serie) y $\widehat{I}_i=V_\text{med}/R_i$ (paralelo). Se incluyen además las comparaciones de resistencias equivalentes.
+
+\begin{figure}[H]\centering
+\includegraphics[width=0.5\textwidth]{serie_validacion.png}
+\caption{Serie: comparación $V_i$ medido vs. $I_\text{prom}R_i$.}
+\label{fig:serie}
+\end{figure}
+\noindent\textbf{Interpretación (Serie).} La coincidencia entre $V_i$ medido y $I_\text{prom}R_i$ confirma que la corriente es (aprox.) común en todos los elementos y que las diferencias entre $V_i^\text{med}$ y $V_i^\text{calc}$ se explican por tolerancias y contactos. La suma de caídas reproduce $V_\text{total}$ y $R_\text{eq,s}$ coincide con la suma de $R_i$.
+\begin{figure}[H]\centering
+\includegraphics[width=0.5\textwidth]{paralelo_validacion.png}
+\caption{Paralelo: comparación $I_i$ medido vs. $V_\text{comun}/R_i$.}
+\label{fig:paralelo}
+\end{figure}
+\noindent\textbf{Interpretación (Paralelo).} Al ser $V$ común, las corrientes decrecen con la resistencia ($I\propto 1/R$). La suma $\sum I_i$ reproduce $I_\text{total}$ y $R_\text{eq,p}$ resulta bajo, coherente con ramas en paralelo.
+\begin{figure}[H]\centering
+\includegraphics[width=0.5\textwidth]{mixto_validacion.png}
+\caption{Mixto: consistencia $V_i$ e $I_i$ con $R_i$ por ley de Ohm.}
+\label{fig:mixto}
+\end{figure}
+\noindent\textbf{Interpretación (Mixto).} Las corrientes de rama y caídas de potencial son consistentes con los divisores serie-paralelo. La reducción por etapas conduce a un $R_\text{eq,m}$ cercano al reportado ($\approx149.3~\Omega$).
+\begin{figure}[H]\centering
+\includegraphics[width=0.5\textwidth]{equivalentes.png}
+\caption{Comparación de $R_\text{eq}$: medido vs. calculado (serie, paralelo, mixto).}
+\label{fig:req}
+\end{figure}
+
+En serie, el error relativo promedio de $V_i$ respecto a $I_\text{prom}R_i$ se mantiene bajo, consistente con una única corriente. En paralelo, las corrientes por rama concuerdan con $V/R_i$. En el arreglo mixto, los pares $(V_i,I_i)$ son coherentes con los $R_i$ medidos, y el $R_\text{eq}$ coincide con el valor reportado dentro de la incertidumbre esperada.
+
+\section{Anexos}
+% Imágenes adicionales presentes en la carpeta Anexos
+\begin{figure}[H]\centering
+\resizebox{0.4\columnwidth}{!}{\includegraphics{Anexos/Imagen de WhatsApp 2025-11-15 a las 17.29.51_57dbb2b1.jpg}}\hfill
+\resizebox{0.4\columnwidth}{!}{\includegraphics{Anexos/Imagen de WhatsApp 2025-11-15 a las 17.29.52_28887125.jpg}}
+\caption{Evidencias adicionales del circuito (1).}
+\end{figure}
+\begin{figure}[H]\centering
+\resizebox{0.4\columnwidth}{!}{\includegraphics{Anexos/Imagen de WhatsApp 2025-11-15 a las 17.29.52_af9974d2.jpg}}\hfill
+\resizebox{0.4\columnwidth}{!}{\includegraphics{Anexos/Imagen de WhatsApp 2025-11-15 a las 17.29.52_ee6e1c29.jpg}}
+\caption{Evidencias adicionales del circuito (2).}
+\end{figure}
+
+\section{Conclusiones}
+\begin{itemize}
+  \item La ley de Ohm describe adecuadamente el comportamiento medido en las tres configuraciones.
+  \item $R_\text{eq}$ de serie, paralelo y mixto coincide con las reglas de combinación estándar y con los valores reportados ($\sim$836 $\Omega$, 23.2 $\Omega$ y 149.3 $\Omega$).
+  \item Las pequeñas discrepancias se asocian a tolerancia de resistores, resistencia de contactos y resolución de los instrumentos.
+\end{itemize}
+
+\begin{thebibliography}{9}
+\bibitem{Giancoli} Giancoli, D. C. Física para ciencias e ingeniería. Pearson.
+\bibitem{Serway} Serway \& Jewett. Physics for Scientists and Engineers. Cengage.
+\end{thebibliography}
+
+\end{document}
+

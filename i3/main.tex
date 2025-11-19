@@ -1,0 +1,530 @@
+\documentclass[11pt,twocolumn]{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[tmargin=20mm,bmargin=35mm,lmargin=10mm,rmargin=10mm]{geometry}
+
+\setlength{\columnsep}{0.8cm}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english, spanish, es-noindentfirst, es-tabla]{babel}
+\decimalpoint
+\usepackage{amsmath,amssymb,lmodern,amsfonts} 
+\usepackage{bm,latexsym,amsmath,amssymb,amsfonts,mathrsfs}
+\usepackage{float}
+\usepackage{mathtools}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{braket}
+\usepackage{float} 
+\usepackage{multirow}
+\usepackage{tikz}
+\usepackage{verbatim}
+\usepackage{array, booktabs}
+\bibliographystyle{unsrt}
+\usetikzlibrary{arrows} 
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{fit}
+\usetikzlibrary{shadows}
+\usetikzlibrary{positioning}
+\usepackage{lastpage}
+\usepackage{titling}
+\usepackage[colorlinks=true,bookmarksopen,bookmarksnumbered,linktocpage]{hyperref}
+\title{\textbf{Determinación de la resistividad de dos conductores: Constantán y Cromo-Níquel}}
+\author{%
+  Juan David Mena Gamboa - 2221886\\
+  Nicolás Santiago Espinosa Carrillo - 2240678 \\
+                      \\
+  \textbf{Grupo:} E1
+} 
+\date{\today}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{1.0pt}
+\renewcommand{\footrulewidth}{1.0pt}
+\renewcommand{\footruleskip}{-10pt}
+\setlength{\headheight}{2cm}
+\lhead{\includegraphics[height=1.5cm]{UIS.png}}
+\chead{Universidad Industrial de Santander\\
+Escuela de Física}
+\rhead{\includegraphics[height=1.5cm]{NewLogo.jpg}}
+
+\usepackage[colorlinks=true,bookmarksopen,bookmarksnumbered,linktocpage]{hyperref}
+\hypersetup{linkcolor=blue}
+\hypersetup{citecolor=red}
+
+\renewcommand{\thesection}{\Roman{section}} 
+\renewcommand{\thesubsection}{\thesection.\Roman{subsection}}
+\hyphenpenalty=10000
+
+\graphicspath{{graficas/}}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{fancy}
+
+\section{Introducción}
+
+La caracterización de materiales por su comportamiento eléctrico permite clasificarlos como conductores y no conductores, distinción que surge de su capacidad para conducir corriente cuando se les aplica una diferencia de potencial. La conductividad $\sigma$ es una propiedad intrínseca que cuantifica la facilidad con la que los portadores de carga (generalmente electrones) fluyen a través de una sección transversal del material. La resistividad $\rho$ se define como el inverso de la conductividad, $\rho = 1/\sigma$.
+
+La resistencia eléctrica de un conductor depende de su longitud $L$, su área transversal $A$, y del material del cual está hecho. Esta dependencia se expresa mediante la relación:
+
+\begin{equation}
+R = \rho \frac{L}{A} \quad [\Omega]
+\end{equation}
+
+donde $\rho$ es la resistividad del material, medida en ohm-metros ($\Omega \cdot$m). La resistividad es una constante propia de cada material e independiente de las dimensiones geométricas del conductor, la diferencia de potencial aplicada y la corriente que circula por él.
+
+La ley de Ohm establece que, para un conductor a temperatura constante, la razón entre la diferencia de potencial $\Delta V$ aplicada entre dos puntos del conductor y la corriente eléctrica $I$ que circula por él es constante. Esta constante se define como la resistencia eléctrica entre esos puntos:
+
+\begin{equation}
+R = \frac{\Delta V}{I} \quad [\Omega]
+\end{equation}
+
+En este laboratorio se determinan experimentalmente las resistividades del constantán y del cromo-níquel mediante dos métodos: (i) medición directa de resistencia utilizando un óhmetro; y (ii) medición indirecta mediante la ley de Ohm, midiendo voltaje y corriente.
+
+\section{Metodología}
+
+El experimento se desarrolló mediante un método inductivo en dos fases, basado en observación sistemática, conocimiento teórico y registro de datos.
+
+\textbf{Fase uno: Medición directa de resistencia.} Se montó el sistema mostrado en la Figura 1, utilizando un óhmetro para medir directamente la resistencia de alambres de constantán y cromo-níquel de diferentes diámetros. Se varió la longitud del conductor desde 5 cm hasta 50 cm en incrementos de 5 cm, registrando la resistencia para cada longitud. Se realizaron mediciones para constantán de diámetros 0.35 mm y 0.4 mm, y para cromo-níquel de los mismos diámetros. Se registró el diámetro de cada alambre y se calculó el área transversal mediante $A = \pi r^2$, donde $r = D/2$ es el radio del alambre.
+
+\textbf{Fase dos: Medición indirecta de resistencia (Ley de Ohm).} Se montó el sistema mostrado en la Figura 2, conectando los alambres a una fuente de alimentación y utilizando multímetros digitales para medir voltaje y corriente. Se mantuvo una corriente constante de $I = 0.025$ A para las mediciones de cromo-níquel, mientras que para constantán se varió la corriente según la configuración. Se registraron los valores de voltaje $\Delta V$ y corriente $I$ para las mismas longitudes utilizadas en la Fase uno. La resistencia se calculó mediante $R = \Delta V/I$ para cada longitud.
+
+Para determinar la resistividad experimentalmente, se construyeron gráficas de $R$ vs $L/A$ para cada material y diámetro. La pendiente de estas gráficas corresponde directamente a la resistividad $\rho$ del material.
+
+\section{Tratamiento de Datos}
+
+Para el tratamiento de datos y medidas estadísticas relativas a cuantificar el error del experimento, se usaron las siguientes fórmulas:
+
+Promedio:
+\[ \bar{x} = \frac{\sum x_i}{n} \]
+
+Desviación estándar:
+\[ S = \sqrt{\frac{\sum (x_i-\bar{x})^2}{n-1}} \]
+
+Incertidumbre:
+\[ \delta = \frac{S}{\sqrt{n}} \]
+
+\subsection*{I. Fase uno: Medición directa de resistencia}
+
+\subsubsection*{Constantán 0.4 mm}
+
+Diámetro: $D = 0.4$ mm $= 4 \times 10^{-4}$ m. Radio: $r = 2 \times 10^{-4}$ m. Área transversal: $A = \pi r^2 = \pi (2 \times 10^{-4})^2 = 1.257 \times 10^{-7}$ m$^2$.
+
+\begin{table}[H]
+\centering
+\caption{Resistencia directa vs longitud para Constantán 0.4 mm.}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{cccc}
+\toprule
+\textbf{L [cm]} & \textbf{L [m]} & \textbf{R [$\Omega$]} & \textbf{L/A [m$^{-1}$]} \\
+\midrule
+5 & 0.05 & 0.6 & 3.98$\times 10^5$ \\
+10 & 0.10 & 0.7 & 7.96$\times 10^5$ \\
+15 & 0.15 & 0.9 & 1.19$\times 10^6$ \\
+20 & 0.20 & 1.1 & 1.59$\times 10^6$ \\
+25 & 0.25 & 1.3 & 1.99$\times 10^6$ \\
+30 & 0.30 & 1.4 & 2.39$\times 10^6$ \\
+35 & 0.35 & 1.8 & 2.79$\times 10^6$ \\
+40 & 0.40 & 1.9 & 3.18$\times 10^6$ \\
+45 & 0.45 & 2.1 & 3.58$\times 10^6$ \\
+50 & 0.50 & 2.3 & 3.98$\times 10^6$ \\
+\bottomrule
+\end{tabular}%
+}
+\label{tab:constantan_04_directa}
+\end{table}
+
+\subsubsection*{Constantán 0.35 mm}
+
+Diámetro: $D = 0.35$ mm $= 3.5 \times 10^{-4}$ m. Radio: $r = 1.75 \times 10^{-4}$ m. Área transversal: $A = \pi r^2 = \pi (1.75 \times 10^{-4})^2 = 9.621 \times 10^{-8}$ m$^2$.
+
+\begin{table}[H]
+\centering
+\caption{Resistencia directa vs longitud para Constantán 0.35 mm.}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{cccc}
+\toprule
+\textbf{L [cm]} & \textbf{L [m]} & \textbf{R [$\Omega$]} & \textbf{L/A [m$^{-1}$]} \\
+\midrule
+5 & 0.05 & 0.6 & 5.20$\times 10^5$ \\
+10 & 0.10 & 0.8 & 1.04$\times 10^6$ \\
+15 & 0.15 & 1.0 & 1.56$\times 10^6$ \\
+20 & 0.20 & 1.3 & 2.08$\times 10^6$ \\
+25 & 0.25 & 1.6 & 2.60$\times 10^6$ \\
+30 & 0.30 & 1.9 & 3.12$\times 10^6$ \\
+35 & 0.35 & 2.1 & 3.64$\times 10^6$ \\
+40 & 0.40 & 2.3 & 4.16$\times 10^6$ \\
+45 & 0.45 & 2.7 & 4.68$\times 10^6$ \\
+50 & 0.50 & 2.9 & 5.20$\times 10^6$ \\
+\bottomrule
+\end{tabular}%
+}
+\label{tab:constantan_035_directa}
+\end{table}
+
+\subsubsection*{Cromo-Níquel 0.4 mm}
+
+Diámetro: $D = 0.4$ mm $= 4 \times 10^{-4}$ m. Radio: $r = 2 \times 10^{-4}$ m. Área transversal: $A = 1.257 \times 10^{-7}$ m$^2$.
+
+\begin{table}[H]
+\centering
+\caption{Resistencia directa vs longitud para Cromo-Níquel 0.4 mm.}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{cccc}
+\toprule
+\textbf{L [cm]} & \textbf{L [m]} & \textbf{R [$\Omega$]} & \textbf{L/A [m$^{-1}$]} \\
+\midrule
+5 & 0.05 & 0.4 & 3.98$\times 10^5$ \\
+10 & 0.10 & 1.1 & 7.96$\times 10^5$ \\
+15 & 0.15 & 1.2 & 1.19$\times 10^6$ \\
+20 & 0.20 & 1.9 & 1.59$\times 10^6$ \\
+25 & 0.25 & 2.2 & 1.99$\times 10^6$ \\
+30 & 0.30 & 2.9 & 2.39$\times 10^6$ \\
+35 & 0.35 & 3.2 & 2.79$\times 10^6$ \\
+40 & 0.40 & 3.7 & 3.18$\times 10^6$ \\
+45 & 0.45 & 3.8 & 3.58$\times 10^6$ \\
+50 & 0.50 & 4.3 & 3.98$\times 10^6$ \\
+\bottomrule
+\end{tabular}%
+}
+\label{tab:cromoniquel_04_directa}
+\end{table}
+
+\subsubsection*{Cromo-Níquel 0.35 mm}
+
+Diámetro: $D = 0.35$ mm $= 3.5 \times 10^{-4}$ m. Radio: $r = 1.75 \times 10^{-4}$ m. Área transversal: $A = 9.621 \times 10^{-8}$ m$^2$.
+
+\begin{table}[H]
+\centering
+\caption{Resistencia directa vs longitud para Cromo-Níquel 0.35 mm.}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{cccc}
+\toprule
+\textbf{L [cm]} & \textbf{L [m]} & \textbf{R [$\Omega$]} & \textbf{L/A [m$^{-1}$]} \\
+\midrule
+5 & 0.05 & 0.3 & 5.20$\times 10^5$ \\
+10 & 0.10 & 0.9 & 1.04$\times 10^6$ \\
+15 & 0.15 & 1.5 & 1.56$\times 10^6$ \\
+20 & 0.20 & 2.2 & 2.08$\times 10^6$ \\
+25 & 0.25 & 2.6 & 2.60$\times 10^6$ \\
+30 & 0.30 & 3.1 & 3.12$\times 10^6$ \\
+35 & 0.35 & 3.7 & 3.64$\times 10^6$ \\
+40 & 0.40 & 4.3 & 4.16$\times 10^6$ \\
+45 & 0.45 & 4.9 & 4.68$\times 10^6$ \\
+50 & 0.50 & 5.5 & 5.20$\times 10^6$ \\
+\bottomrule
+\end{tabular}%
+}
+\label{tab:cromoniquel_035_directa}
+\end{table}
+
+\noindent\textbf{Procedimiento paso a paso (Fase uno).}
+\begin{enumerate}
+  \item Para cada material y diámetro, se midió directamente la resistencia $R$ para diferentes longitudes $L$.
+  \item Se calculó el área transversal: $A = \pi r^2 = \pi (D/2)^2$, donde $D$ es el diámetro del alambre.
+  \item Se calculó la razón $L/A$ para cada medición.
+  \item Se construyó la gráfica $R$ vs $L/A$. La pendiente de esta gráfica corresponde a la resistividad $\rho$.
+  \item A partir de la relación $R = \rho (L/A)$, la pendiente $m$ de la recta ajustada es: $\rho = m$.
+\end{enumerate}
+
+\subsection*{II. Fase dos: Medición indirecta de resistencia (Ley de Ohm)}
+
+\subsubsection*{Constantán 0.4 mm}
+
+\begin{table}[H]
+\centering
+\caption{Voltaje y corriente vs longitud para Constantán 0.4 mm.}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{ccccc}
+\toprule
+\textbf{L [cm]} & \textbf{V [V]} & \textbf{I [A]} & \textbf{R [$\Omega$]} & \textbf{L/A [m$^{-1}$]} \\
+\midrule
+5 & 0.007 & 0.027 & 0.259 & 3.98$\times 10^5$ \\
+10 & 0.020 & 0.027 & 0.741 & 7.96$\times 10^5$ \\
+15 & 0.033 & -- & -- & 1.19$\times 10^6$ \\
+20 & 0.034 & -- & -- & 1.59$\times 10^6$ \\
+25 & 0.040 & -- & -- & 1.99$\times 10^6$ \\
+30 & 0.044 & -- & -- & 2.39$\times 10^6$ \\
+35 & 0.045 & -- & -- & 2.79$\times 10^6$ \\
+40 & 0.043 & -- & -- & 3.18$\times 10^6$ \\
+45 & 0.049 & -- & -- & 3.58$\times 10^6$ \\
+50 & 0.054 & -- & -- & 3.98$\times 10^6$ \\
+\bottomrule
+\end{tabular}%
+}
+\label{tab:constantan_04_ohm}
+\end{table}
+
+\subsubsection*{Constantán 0.35 mm}
+
+\begin{table}[H]
+\centering
+\caption{Voltaje vs longitud para Constantán 0.35 mm.}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{cccc}
+\toprule
+\textbf{L [cm]} & \textbf{V [V]} & \textbf{R [$\Omega$]} & \textbf{L/A [m$^{-1}$]} \\
+\midrule
+5 & 0.009 & -- & 5.20$\times 10^5$ \\
+10 & 0.015 & -- & 1.04$\times 10^6$ \\
+15 & 0.023 & -- & 1.56$\times 10^6$ \\
+20 & 0.030 & -- & 2.08$\times 10^6$ \\
+25 & 0.041 & -- & 2.60$\times 10^6$ \\
+30 & 0.046 & -- & 3.12$\times 10^6$ \\
+35 & 0.053 & -- & 3.64$\times 10^6$ \\
+40 & 0.058 & -- & 4.16$\times 10^6$ \\
+45 & 0.064 & -- & 4.68$\times 10^6$ \\
+50 & 0.071 & -- & 5.20$\times 10^6$ \\
+\bottomrule
+\end{tabular}%
+}
+\label{tab:constantan_035_ohm}
+\end{table}
+
+\subsubsection*{Cromo-Níquel 0.35 mm (I = 0.025 A constante)}
+
+\begin{table}[H]
+\centering
+\caption{Voltaje vs longitud para Cromo-Níquel 0.35 mm con I = 0.025 A.}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{ccccc}
+\toprule
+\textbf{L [cm]} & \textbf{V [V]} & \textbf{I [A]} & \textbf{R [$\Omega$]} & \textbf{L/A [m$^{-1}$]} \\
+\midrule
+5 & 0.015 & 0.025 & 0.600 & 5.20$\times 10^5$ \\
+10 & 0.034 & 0.025 & 1.360 & 1.04$\times 10^6$ \\
+15 & 0.054 & 0.025 & 2.160 & 1.56$\times 10^6$ \\
+20 & 0.069 & 0.025 & 2.760 & 2.08$\times 10^6$ \\
+25 & 0.082 & 0.025 & 3.280 & 2.60$\times 10^6$ \\
+30 & 0.096 & 0.025 & 3.840 & 3.12$\times 10^6$ \\
+35 & 0.115 & 0.025 & 4.600 & 3.64$\times 10^6$ \\
+40 & 0.121 & 0.025 & 4.840 & 4.16$\times 10^6$ \\
+45 & 0.147 & 0.025 & 5.880 & 4.68$\times 10^6$ \\
+50 & 0.154 & 0.025 & 6.160 & 5.20$\times 10^6$ \\
+\bottomrule
+\end{tabular}%
+}
+\label{tab:cromoniquel_035_ohm}
+\end{table}
+
+\subsubsection*{Cromo-Níquel 0.4 mm}
+
+\begin{table}[H]
+\centering
+\caption{Voltaje vs longitud para Cromo-Níquel 0.4 mm.}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{cccc}
+\toprule
+\textbf{L [cm]} & \textbf{V [V]} & \textbf{R [$\Omega$]} & \textbf{L/A [m$^{-1}$]} \\
+\midrule
+5 & 0.020 & -- & 3.98$\times 10^5$ \\
+10 & 0.026 & -- & 7.96$\times 10^5$ \\
+15 & 0.042 & -- & 1.19$\times 10^6$ \\
+20 & 0.052 & -- & 1.59$\times 10^6$ \\
+25 & 0.059 & -- & 1.99$\times 10^6$ \\
+30 & 0.100 & -- & 2.39$\times 10^6$ \\
+35 & 0.108 & -- & 2.79$\times 10^6$ \\
+40 & 0.114 & -- & 3.18$\times 10^6$ \\
+45 & 0.125 & -- & 3.58$\times 10^6$ \\
+50 & 0.134 & -- & 3.98$\times 10^6$ \\
+\bottomrule
+\end{tabular}%
+}
+\label{tab:cromoniquel_04_ohm}
+\end{table}
+
+\noindent\textbf{Procedimiento paso a paso (Fase dos).}
+\begin{enumerate}
+  \item Para cada material y diámetro, se midieron voltaje $\Delta V$ y corriente $I$ para diferentes longitudes $L$.
+  \item Se calculó la resistencia mediante la ley de Ohm: $R = \Delta V/I$.
+  \item Se calculó la razón $L/A$ para cada medición (mismo procedimiento que en Fase uno).
+  \item Se construyó la gráfica $R$ vs $L/A$. La pendiente de esta gráfica corresponde a la resistividad $\rho$.
+  \item Ejemplo de cálculo: Para Cromo-Níquel 0.35 mm, $L = 5$ cm, $V = 0.015$ V, $I = 0.025$ A:
+  \begin{equation}
+  R = \frac{\Delta V}{I} = \frac{0.015}{0.025} = 0.600\ \Omega
+  \end{equation}
+\end{enumerate}
+
+\subsection*{Desarrollo analítico de cálculos}
+\subsubsection*{Determinación de $\rho$ por método directo}
+De $R=\rho \, L/A$ se obtiene una regresión lineal $R=m(L/A)+b$ donde idealmente $b\approx 0$ y $m=\rho$.
+\[
+\rho \equiv m = \frac{\sum (x_i-\bar{x})(y_i-\bar{y})}{\sum (x_i-\bar{x})^2},\quad
+ x_i=\frac{L_i}{A},\ y_i=R_i.
+\]
+Ejemplo (Constantán 0.40 mm): con $A=\pi(2\times 10^{-4})^2=1.257\times 10^{-7}$ m$^2$ y los pares $(L/A,R)$ de la Tabla~\ref{tab:constantan_04_directa}, el ajuste produce
+\[
+\rho=(49.20\pm \delta)\times 10^{-8}\ \Omega\cdot \mathrm{m},\qquad R^2=0.9914.
+\]
+\subsubsection*{Desviación, incertidumbre y error relativo}
+\[
+\bar{\rho}=\frac{\sum \rho_j}{n},\quad
+S_\rho=\sqrt{\frac{\sum(\rho_j-\bar{\rho})^2}{n-1}},\quad
+\delta_\rho=\frac{S_\rho}{\sqrt{n}},\quad
+\varepsilon_\mathrm{rel}=\frac{|\bar{\rho}-\rho_\mathrm{ref}|}{\rho_\mathrm{ref}}\times 100\%.
+\]
+Análogamente para Cromo–Níquel y para el método indirecto (siguiente apartado).
+\subsubsection*{Determinación de $\rho$ por método indirecto}
+Primero se calcula $R_i=\Delta V_i/I_i$; luego se ajusta $R$ en función de $L/A$ igual que en el método directo, de donde
+\[
+\rho_\text{Ohm}\equiv m_{R\ \mathrm{vs}\ L/A}.
+\]
+Ejemplo (Cromo–Níquel 0.35 mm, $I=0.025$ A constante): usando la Tabla~\ref{tab:cromoniquel_035_ohm},
+\[
+\rho_\text{Ohm}=(117.97\pm \delta)\times 10^{-8}\ \Omega\cdot \mathrm{m},\quad R^2=0.9933.
+\]
+Finalmente se comparan $\rho_\text{directo}$ y $\rho_\text{Ohm}$ con el valor de referencia bibliográfico.
+\section{Análisis de Resultados}
+
+Los resultados experimentales obtenidos permiten determinar la resistividad de los materiales constantán y cromo-níquel mediante dos métodos independientes, validando la relación fundamental $R = \rho (L/A)$ y la ley de Ohm.
+
+\subsection{Relación entre Resistencia y Geometría del Conductor}
+
+Para todas las configuraciones estudiadas, se observa una relación lineal entre la resistencia $R$ y la razón $L/A$, confirmando la validez de la expresión teórica $R = \rho (L/A)$. La Figura \ref{fig:R_vs_L} muestra la dependencia de la resistencia con la longitud del conductor para todos los materiales y diámetros estudiados, donde se aprecia claramente la relación lineal esperada.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{R_vs_L.png}
+\caption{Dependencia de la resistencia con la longitud para constantán y cromo-níquel en diferentes diámetros.}
+\label{fig:R_vs_L}
+\end{figure}
+
+\subsection{Determinación Experimental de la Resistividad - Fase 1}
+
+La resistividad $\rho$ se determina experimentalmente como la pendiente de las gráficas $R$ vs $L/A$. Las Figuras \ref{fig:constantan_04_fase1}, \ref{fig:constantan_035_fase1}, \ref{fig:cromoniquel_04_fase1} y \ref{fig:cromoniquel_035_fase1} muestran los resultados obtenidos mediante medición directa de resistencia.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{constantan_04 mm_fase1.png}
+\caption{Resistencia vs $L/A$ para Constantán 0.4 mm - Fase 1 (Medición directa).}
+\label{fig:constantan_04_fase1}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{constantan_035 mm_fase1.png}
+\caption{Resistencia vs $L/A$ para Constantán 0.35 mm - Fase 1 (Medición directa).}
+\label{fig:constantan_035_fase1}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{cromo_niquel_04 mm_fase1.png}
+\caption{Resistencia vs $L/A$ para Cromo-Níquel 0.4 mm - Fase 1 (Medición directa).}
+\label{fig:cromoniquel_04_fase1}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{cromo_niquel_035 mm_fase1.png}
+\caption{Resistencia vs $L/A$ para Cromo-Níquel 0.35 mm - Fase 1 (Medición directa).}
+\label{fig:cromoniquel_035_fase1}
+\end{figure}
+
+Los valores de resistividad obtenidos mediante medición directa son:
+\begin{itemize}
+\item Constantán 0.4 mm: $\rho = 49.20 \times 10^{-8}$ $\Omega \cdot$m (error: 0.4\%, $R^2 = 0.9914$)
+\item Constantán 0.35 mm: $\rho = 50.38 \times 10^{-8}$ $\Omega \cdot$m (error: 2.8\%, $R^2 = 0.9963$)
+\item Cromo-Níquel 0.4 mm: $\rho = 108.30 \times 10^{-8}$ $\Omega \cdot$m (error: 1.5\%, $R^2 = 0.9870$)
+\item Cromo-Níquel 0.35 mm: $\rho = 109.39 \times 10^{-8}$ $\Omega \cdot$m (error: 0.6\%, $R^2 = 0.9986$)
+\end{itemize}
+
+Estos valores muestran excelente concordancia con los valores teóricos reportados en la bibliografía ($\rho_{\text{constantán}} = 49 \times 10^{-8}$ $\Omega \cdot$m y $\rho_{\text{cromo-níquel}} = 110 \times 10^{-8}$ $\Omega \cdot$m), con errores relativos menores al 3\% y coeficientes de determinación $R^2$ superiores a 0.98, indicando un ajuste lineal muy satisfactorio.
+
+\subsection{Determinación Experimental de la Resistividad - Fase 2}
+
+La Figura \ref{fig:cromoniquel_035_fase2} muestra los resultados obtenidos mediante medición indirecta de resistencia utilizando la ley de Ohm para Cromo-Níquel 0.35 mm.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{cromo_niquel_035 mm_fase2.png}
+\caption{Resistencia vs $L/A$ para Cromo-Níquel 0.35 mm - Fase 2 (Ley de Ohm).}
+\label{fig:cromoniquel_035_fase2}
+\end{figure}
+
+El valor de resistividad obtenido mediante este método es $\rho = 117.97 \times 10^{-8}$ $\Omega \cdot$m (error: 7.2\%, $R^2 = 0.9933$). Aunque el error es mayor que en la Fase 1, el coeficiente de determinación sigue siendo excelente, confirmando la validez del método.
+
+\subsection{Comparación entre Métodos de Medición}
+
+La Figura \ref{fig:comparacion_resistividades} muestra una comparación de los valores de resistividad obtenidos mediante ambos métodos junto con los valores teóricos.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{comparacion_resistividades.png}
+\caption{Comparación de resistividades obtenidas experimentalmente mediante ambos métodos.}
+\label{fig:comparacion_resistividades}
+\end{figure}
+
+Los valores de resistividad obtenidos mediante medición directa (Fase uno) y medición indirecta mediante la ley de Ohm (Fase dos) muestran buena consistencia. Para Cromo-Níquel 0.35 mm, la diferencia entre ambos métodos es de aproximadamente 8\%, lo cual puede atribuirse a las limitaciones instrumentales y a posibles variaciones en las condiciones experimentales entre ambas fases.
+
+\subsection{Fuentes de Error y Limitaciones}
+
+Los errores observados pueden atribuirse a:
+\begin{itemize}
+\item \textbf{Precisión en la medición del diámetro}: Errores en la determinación del diámetro del alambre afectan directamente el cálculo del área transversal y, por ende, la determinación de $\rho$.
+\item \textbf{Variaciones de temperatura}: Cambios en la temperatura durante las mediciones pueden alterar el valor de la resistividad, ya que $\rho$ depende de la temperatura.
+\item \textbf{Homogeneidad del material}: Se asume que el material es uniforme y homogéneo a lo largo de toda su longitud.
+\item \textbf{Precisión instrumental}: Resolución limitada de los multímetros y óhmetros empleados.
+\item \textbf{Contactos eléctricos}: Resistencia de contacto en los puntos de conexión puede introducir errores sistemáticos.
+\end{itemize}
+
+\section{Conclusiones}
+
+El estudio experimental de la resistividad de conductores ha permitido validar los principios fundamentales de la conducción eléctrica y determinar experimentalmente las resistividades del constantán y del cromo-níquel mediante dos métodos independientes.
+
+\subsection{Validación de Principios Teóricos}
+
+\begin{itemize}
+\item La relación lineal entre resistencia y la razón $L/A$ se confirma experimentalmente para todos los materiales y diámetros estudiados, validando la expresión $R = \rho (L/A)$.
+\item La ley de Ohm se verifica experimentalmente, permitiendo determinar la resistencia de forma indirecta mediante la medición de voltaje y corriente.
+\item La resistividad se confirma como una constante propia de cada material, independiente de las dimensiones geométricas del conductor.
+\end{itemize}
+
+\subsection{Determinación de la Resistividad}
+
+\begin{itemize}
+\item Los valores experimentales de resistividad obtenidos para constantán y cromo-níquel mediante ambos métodos muestran excelente concordancia con los valores teóricos reportados en la bibliografía.
+\item Para constantán, los valores experimentales ($49.20 - 50.38 \times 10^{-8}$ $\Omega \cdot$m) se encuentran muy cerca del valor teórico ($49 \times 10^{-8}$ $\Omega \cdot$m), con errores relativos menores al 3\%.
+\item Para cromo-níquel, los valores experimentales ($108.30 - 117.97 \times 10^{-8}$ $\Omega \cdot$m) también muestran buena concordancia con el valor teórico ($110 \times 10^{-8}$ $\Omega \cdot$m), con errores relativos menores al 8\%.
+\item Las pequeñas diferencias entre valores experimentales y teóricos pueden atribuirse principalmente a limitaciones instrumentales, variaciones de temperatura durante las mediciones y precisión en la medición del diámetro del alambre.
+\item La metodología empleada proporciona una base sólida para la caracterización experimental de propiedades eléctricas de materiales, validando ambos métodos de medición.
+\end{itemize}
+
+\subsection{Influencia de la Geometría}
+
+\begin{itemize}
+\item Se observa que la resistencia aumenta al incrementar la longitud del conductor, como se espera teóricamente.
+\item Se confirma que al aumentar el área transversal, la resistencia del conductor disminuye.
+\item Estos resultados validan la dependencia de la resistencia con las dimensiones geométricas del conductor.
+\end{itemize}
+
+\section{Anexos}
+% Imágenes adicionales presentes en la carpeta Anexos
+\begin{figure}[H]\centering
+\resizebox{0.4\columnwidth}{!}{\includegraphics{Anexos/Imagen de WhatsApp 2025-11-15 a las 17.31.02_c60502fb.jpg}}\hfill
+\resizebox{0.4\columnwidth}{!}{\includegraphics{Anexos/Imagen de WhatsApp 2025-11-15 a las 17.31.02_fbc66099.jpg}}
+\caption{Evidencias adicionales del montaje (1).}
+\end{figure}
+\begin{figure}[H]\centering
+\resizebox{0.4\columnwidth}{!}{\includegraphics{Anexos/Imagen de WhatsApp 2025-11-15 a las 17.31.03_a2d3b996.jpg}}\hfill
+\resizebox{0.4\columnwidth}{!}{\includegraphics{Anexos/Imagen de WhatsApp 2025-11-15 a las 17.31.03_f7dac5e2.jpg}}
+\caption{Evidencias adicionales del montaje (2).}
+\end{figure}
+
+\begin{thebibliography}{9}
+
+\bibitem{Serway} Serway, R. A., \& Jewett, J. W. (2018). \textit{Physics for Scientists and Engineers} (10th ed.). Cengage Learning.
+
+\bibitem{Young} Young, H. D., Freedman, R. A., \& Ford, A. L. (2009). \textit{University Physics with Modern Physics} (12th ed.). Pearson Addison-Wesley.
+
+\bibitem{Giancoli} Giancoli, D. C. (2009). \textit{Physics for Scientists and Engineers with Modern Physics} (4th ed.). Pearson Prentice Hall.
+
+\bibitem{Resistivity} Callister, W. D., \& Rethwisch, D. G. (2018). \textit{Materials Science and Engineering: An Introduction} (10th ed.). John Wiley \& Sons.
+
+\end{thebibliography}
+
+
+\end{document}

@@ -1,0 +1,368 @@
+\documentclass[11pt,twocolumn]{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[tmargin=20mm,bmargin=35mm,lmargin=10mm,rmargin=10mm]{geometry}
+
+\setlength{\columnsep}{0.8cm}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english, spanish, es-noindentfirst, es-tabla]{babel}
+\decimalpoint
+\usepackage{amsmath,amssymb,lmodern,amsfonts} 
+\usepackage{bm,latexsym,amsmath,amssymb,amsfonts,mathrsfs}
+\usepackage{float}
+\usepackage{mathtools}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{braket}
+\usepackage{float} 
+\usepackage{multirow}
+\usepackage{tikz}
+\usepackage{verbatim}
+\usepackage{array, booktabs}
+\bibliographystyle{unsrt}
+\usetikzlibrary{arrows} 
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{fit}
+\usetikzlibrary{shadows}
+\usetikzlibrary{positioning}
+\usepackage{lastpage}
+\usepackage{titling}
+\usepackage[colorlinks=true,bookmarksopen,bookmarksnumbered,linktocpage]{hyperref}
+\title{\textbf{Estudio de diferentes configuraciones de transformadores}}
+\author{%
+  Juan David Mena Gamboa - 2221886\\
+  Nicolás Santiago Espinosa Carrillo - 2240678 \\
+                      \\
+  \textbf{Grupo:} E1
+} 
+\date{\today}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{1.0pt}
+\renewcommand{\footrulewidth}{1.0pt}
+\renewcommand{\footruleskip}{-10pt}
+\setlength{\headheight}{2cm}
+\lhead{\includegraphics[height=1.5cm]{UIS.png}}
+\chead{Universidad Industrial de Santander\\
+Escuela de Física}
+\rhead{\includegraphics[height=1.5cm]{NewLogo.jpg}}
+
+\usepackage[colorlinks=true,bookmarksopen,bookmarksnumbered,linktocpage]{hyperref}
+\hypersetup{linkcolor=blue}
+\hypersetup{citecolor=red}
+
+\renewcommand{\thesection}{\Roman{section}} 
+\renewcommand{\thesubsection}{\thesection.\Roman{subsection}}
+\hyphenpenalty=10000
+
+\begin{document}
+
+\maketitle
+\thispagestyle{fancy}
+
+\section{Introducción}
+Los transformadores son dispositivos electromagnéticos que permiten elevar o reducir el voltaje alterno manteniendo, idealmente, la potencia aparente constante. Su principio de funcionamiento se basa en la inducción mutua entre dos bobinas arrolladas sobre un mismo núcleo ferromagnético. La relación de transformación ideal viene dada por
+\[ k = \frac{V_s}{V_p} = \frac{N_s}{N_p}, \]
+donde $V_p$ y $V_s$ son los voltajes en primario y secundario, y $N_p$ y $N_s$ el número de espiras en cada bobina. En un transformador real aparecen pérdidas (cobre, núcleo, dispersión) que se manifiestan como desviaciones respecto a la relación ideal y en eficiencias menores al 100\%.
+
+En este laboratorio se estudian: (i) la relación $V_s/V_p$ para configuraciones elevadora ($N_s>N_p$) y reductora ($N_s<N_p$); y (ii) el comportamiento de potencia bajo diferentes cargas resistivas (lámparas) en la configuración reductora.
+
+\section{Metodología}
+Se empleó un núcleo con dos bobinas ($N_p=500$, $N_s=250$ para el modo reductor y viceversa para el modo elevador). Las resistencias DC medidas fueron $R_p=2.5\,\Omega$ y $R_s=0.6\,\Omega$. El primario se alimentó con un autotransformador de CA. Para distintos valores de excitación se registraron los pares $(V_p,V_s)$ con multímetros digitales. Para el estudio de potencia se conectaron cargas resistivas: 1, 2 y 3 lámparas en serie, y 2 y 3 lámparas en paralelo. Se midieron $V_p$, $I_p$, $V_s$ e $I_s$ y se calcularon $P_p=V_p I_p$ y $P_s=V_s I_s$.
+
+\section{Tratamiento de Datos}
+Para reportar magnitudes promedio y su incertidumbre estándar se usaron:
+\[ \bar{x} = \frac{\sum x_i}{n}, \qquad S = \sqrt{\frac{\sum (x_i-\bar{x})^2}{n-1}}, \qquad \delta = \frac{S}{\sqrt{n}}. \]
+
+\subsubsection*{Procedimiento general de cálculo}
+\begin{enumerate}
+  \item Relación de transformación experimental: para cada par de mediciones se calcula $k_i = V_{s,i}/V_{p,i}$.
+  \item Resumen estadístico: con los $k_i$ se obtiene $\bar{k}$, la desviación estándar $S_k$ y la incertidumbre de la media $\delta_{\bar{k}}=S_k/\sqrt{n}$.
+  \item Comparación con el valor ideal: se compara $\bar{k}$ con $N_s/N_p$ y se reporta el error relativo $\varepsilon = \left|\bar{k}-N_s/N_p\right|/(N_s/N_p)\times 100\%$.
+  \item Potencias: para cada caso de carga se calcularon $P_p = V_p I_p$ y $P_s = V_s I_s$ usando los datos de la Tabla \ref{tab:potencia}. (La eficiencia por caso $\eta = P_s/P_p$ se discute en el Análisis de Resultados.)
+  \item Redondeo: se redondeó a dos o tres cifras significativas coherentes con la resolución de instrumentos.
+\end{enumerate}
+
+\subsection*{I.A) Transformador elevador ($N_s=500$, $N_p=250$)}
+\begin{table}[H]
+\centering
+\caption{Pares de medición para la configuración elevadora.}
+\begin{tabular}{cc}
+\toprule
+\textbf{$V_s$ [V]} & \textbf{$V_p$ [V]} \\
+\midrule
+4.786 & 2.578 \\
+12.37 & 6.53 \\
+19.60 & 10.24 \\
+26.18 & 13.62 \\
+39.42 & 20.38 \\
+\bottomrule
+\end{tabular}
+\label{tab:elevador_vs_vp}
+\end{table}
+
+\noindent\textbf{Procedimiento paso a paso (elevador).}
+\begin{enumerate}
+  \item Relación por medición: $k_i = V_{s,i}/V_{p,i}$.
+  \item Sustituyendo con los datos de la Tabla \ref{tab:elevador_vs_vp}:
+  \begin{equation}
+  \begin{aligned}
+    k_i &= \left\{ \tfrac{4.786}{2.578},\, \tfrac{12.37}{6.53},\, \tfrac{19.60}{10.24},\right.\\
+        &\left.\quad \tfrac{26.18}{13.62},\, \tfrac{39.42}{20.38} \right\} \\
+        &= \{1.857,\, 1.894,\, 1.915,\, 1.922,\, 1.935\}.
+  \end{aligned}
+  \end{equation}
+  \item Promedio: $\bar{k} = (\sum k_i)/5 = 9.523/5 = 1.904$.
+  \item Desviación estándar muestral:
+  \begin{equation}
+  \begin{aligned}
+    S_k &= \sqrt{\frac{\sum (k_i-\bar{k})^2}{5-1}} = 0.031,\\
+    \delta_{\bar{k}} &= \frac{S_k}{\sqrt{5}} = 0.014.
+  \end{aligned}
+  \end{equation}
+  \item Comparación ideal: $N_s/N_p = 500/250 = 2.00$, por lo que
+  \begin{equation}
+    \varepsilon = \frac{|\bar{k}-2.00|}{2.00}\times 100\% = 4.8\% .
+  \end{equation}
+\end{enumerate}
+
+Para cada par se evaluó $k_i=V_{s,i}/V_{p,i}$. Con los datos corregidos se obtuvo $\bar{k}=1.904$, $S_k=0.031$ y $\delta_{\bar{k}}=0.014$. El valor ideal es $N_s/N_p=2.00$; el error relativo es \(\approx 4.8\%\).
+
+\subsection*{I.B) Transformador reductor ($N_s=250$, $N_p=500$)}
+\begin{table}[H]
+\centering
+\caption{Pares de medición para la configuración reductora.}
+\begin{tabular}{cc}
+\toprule
+\textbf{$V_s$ [V]} & \textbf{$V_p$ [V]} \\
+\midrule
+6.69 & 14.00 \\
+10.43 & 21.62 \\
+17.26 & 35.46 \\
+21.96 & 44.86 \\
+28.40 & 57.96 \\
+\bottomrule
+\end{tabular}
+\label{tab:reductor_vs_vp}
+\end{table}
+
+\noindent\textbf{Procedimiento paso a paso (reductor).}
+\begin{enumerate}
+  \item Relación por medición: $k_i = V_{s,i}/V_{p,i}$.
+  \item Con los datos de la Tabla \ref{tab:reductor_vs_vp}:
+  \begin{equation}
+  \begin{aligned}
+    k_i &= \left\{ \tfrac{6.69}{14.00},\, \tfrac{10.43}{21.62},\, \tfrac{17.26}{35.46},\right.\\
+        &\left.\quad \tfrac{21.96}{44.86},\, \tfrac{28.40}{57.96} \right\} \\
+        &= \{0.478,\, 0.482,\, 0.487,\, 0.489,\, 0.490\}.
+  \end{aligned}
+  \end{equation}
+  \item Promedio: $\bar{k} = (\sum k_i)/5 = 2.426/5 = 0.485$.
+  \item Desviación estándar e incertidumbre:
+  \begin{equation}
+  \begin{aligned}
+    S_k &= 0.0049,\\
+    \delta_{\bar{k}} &= \frac{0.0049}{\sqrt{5}} = 0.0022.
+  \end{aligned}
+  \end{equation}
+  \item Comparación ideal: $N_s/N_p = 250/500 = 0.500$, de modo que
+  \begin{equation}
+    \varepsilon = \frac{|0.485-0.500|}{0.500}\times 100\% \approx 3.0\% .
+  \end{equation}
+\end{enumerate}
+
+Con $k_i=V_{s,i}/V_{p,i}$ se obtuvo $\bar{k}=0.485$, $S_k=0.0049$ y $\delta_{\bar{k}}=0.0022$. El valor ideal $N_s/N_p=0.500$ difiere en ~3\%.
+
+\subsection*{II) Potencia real en configuración reductora}
+Parámetros medidos: $N_p=500$, $N_s=250$, $R_p=2.5\,\Omega$, $R_s=0.6\,\Omega$. Las potencias se calcularon como $P_p=V_p I_p$ y $P_s=V_s I_s$.
+
+\begin{table}[htbp]
+\centering
+\caption{Datos de potencia para diferentes cargas.}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lcccccc}
+\toprule
+\textbf{Caso} & $V_p$ [V] & $I_p$ [A] & $P_p$ [W] & $V_s$ [V] & $I_s$ [A] & $P_s$ [W] \\
+\midrule
+3 Lámparas en serie     & 60.00 & 0.117 & 7.02  & 29.20 & 0.135 & 3.94 \\
+2 Lámparas en serie     & 60.00 & 0.119 & 7.14  & 29.08 & 0.140 & 4.07 \\
+1 Lámpara               & 60.00 & 0.163 & 9.78  & 28.90 & 0.235 & 6.79 \\
+2 Lámparas en paralelo  & 60.00 & 0.239 & 14.34 & 28.38 & 0.390 & 11.08 \\
+3 Lámparas en paralelo  & 60.39 & 0.416 & 25.12 & 26.50 & 0.796 & 21.09 \\
+\bottomrule
+\end{tabular}%
+}
+\label{tab:potencia}
+\end{table}
+
+\noindent\textbf{Procedimiento paso a paso (potencias).}
+\begin{enumerate}
+  \item Definiciones: $P_p = V_p I_p$, $P_s = V_s I_s$.
+  \item Sustituyendo por fila:
+  \begin{equation}
+  \begin{aligned}
+    P_p &= \{60\cdot0.117,\ 60\cdot0.119,\ 60\cdot0.163,\\
+        &\quad 60\cdot0.239,\ 60.39\cdot0.416\}\\
+        &= \{7.02,\ 7.14,\ 9.78,\ 14.34,\ 25.12\}\ \text{W},\\[2mm]
+    P_s &= \{29.20\cdot0.135,\ 29.08\cdot0.140,\ 28.90\cdot0.235,\\
+        &\quad 28.38\cdot0.390,\ 26.50\cdot0.796\}\\
+        &= \{3.94,\ 4.07,\ 6.79,\ 11.08,\ 21.09\}\ \text{W}.
+  \end{aligned}
+  \end{equation}
+  \item Eficiencia por caso: $\eta = P_s/P_p \times 100\%$.
+  \item Sustituyendo los valores de potencia:
+  \begin{equation}
+  \begin{aligned}
+    \eta &= \left\{\frac{3.94}{7.02},\ \frac{4.07}{7.14},\ \frac{6.79}{9.78},\ \frac{11.08}{14.34},\ \frac{21.09}{25.12}\right\} \times 100\%\\
+         &= \{56.1,\ 57.0,\ 69.4,\ 77.3,\ 84.0\}\%.
+  \end{aligned}
+  \end{equation}
+  \item Pérdidas de potencia: $P_{\rm perd} = P_p - P_s$.
+  \begin{equation}
+  \begin{aligned}
+    P_{\rm perd} &= \{7.02-3.94,\ 7.14-4.07,\ 9.78-6.79,\\
+                 &\quad 14.34-11.08,\ 25.12-21.09\}\\
+                 &= \{3.08,\ 3.07,\ 2.99,\ 3.26,\ 4.03\}\ \text{W}.
+  \end{aligned}
+  \end{equation}
+\end{enumerate}
+
+\noindent\textbf{Resumen estadístico de eficiencia:}
+\begin{itemize}
+\item Eficiencia promedio: $\bar{\eta} = 68.8\%$
+\item Eficiencia máxima: $\eta_{\max} = 84.0\%$ (3 lámparas en paralelo)
+\item Eficiencia mínima: $\eta_{\min} = 56.1\%$ (3 lámparas en serie)
+\item Desviación estándar: $S_\eta = 11.8\%$
+\end{itemize}
+
+\section{Análisis de Resultados}
+
+Los resultados experimentales obtenidos permiten evaluar el comportamiento de los transformadores en diferentes configuraciones y condiciones de carga. El análisis se estructura en torno a la validación de las relaciones teóricas y la caracterización del desempeño energético.
+
+\subsection{Validación de las Relaciones de Transformación}
+
+La variación de la relación de transformación experimental $k = V_s/V_p$ en función del voltaje del primario para ambas configuraciones estudiadas se presenta en la Figura \ref{fig:relacion_voltajes}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{graficas/relacion_voltajes.png}
+\caption{Relación de transformación experimental vs voltaje del primario. La configuración elevadora muestra mayor dispersión que la reductora.}
+\label{fig:relacion_voltajes}
+\end{figure}
+
+Para el transformador elevador, se obtuvo $\bar{k} = 1.904 \pm 0.014$ con un error relativo del 4.8\% respecto al valor teórico $k_{teórico} = N_s/N_p = 2.0$. La desviación estándar de 0.031 indica una reproducibilidad aceptable, aunque ligeramente inferior a la configuración reductora. En contraste, el transformador reductor presenta $\bar{k} = 0.485 \pm 0.0022$ con un error relativo menor (2.9\%) respecto al valor teórico $k_{teórico} = 0.5$. La menor desviación estándar (0.0049) sugiere mayor estabilidad en las mediciones para esta configuración.
+
+La comparación directa de ambas relaciones se muestra en la Figura \ref{fig:vs_vp_comparacion}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{graficas/vs_vp_comparacion.png}
+\caption{Comparación de las relaciones $V_s$ vs $V_p$ experimentales con las predicciones teóricas. Ambas configuraciones muestran excelente linealidad.}
+\label{fig:vs_vp_comparacion}
+\end{figure}
+
+La Figura \ref{fig:vs_vp_comparacion} permite visualizar directamente la linealidad de ambas relaciones y su proximidad a los valores teóricos. Se confirma que ambas configuraciones mantienen una relación proporcional entre los voltajes del primario y secundario, validando el modelo teórico del transformador ideal como primera aproximación.
+
+\subsection{Análisis de Potencia y Eficiencia}
+
+El comportamiento energético del transformador bajo diferentes condiciones de carga se analiza mediante las potencias del primario y secundario, así como la eficiencia resultante.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{graficas/eficiencia_potencia.png}
+\caption{Potencias del primario y secundario (superior) y eficiencia del transformador (inferior) para diferentes configuraciones de carga.}
+\label{fig:eficiencia_potencia}
+\end{figure}
+
+La Figura \ref{fig:eficiencia_potencia} revela varios aspectos importantes del desempeño:
+
+\begin{itemize}
+\item \textbf{Variación de la eficiencia}: La eficiencia oscila entre 56.1\% (3 lámparas en serie) y 84.0\% (3 lámparas en paralelo), con un promedio de 68.8\%.
+\item \textbf{Dependencia de la carga}: Las configuraciones en paralelo presentan mayor eficiencia que las configuraciones en serie, indicando que el transformador opera mejor con cargas de menor resistencia.
+\item \textbf{Pérdidas}: Las pérdidas $(P_p - P_s)$ aumentan proporcionalmente con la potencia transferida, sugiriendo pérdidas tanto fijas (núcleo) como variables (cobre).
+\end{itemize}
+
+\subsection{Caracterización de la Relación Corriente-Potencia}
+
+La relación entre corrientes y potencias en ambos devanados proporciona información adicional sobre el comportamiento del transformador.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{graficas/corriente_potencia.png}
+\caption{Relación entre corriente y potencia en el primario (izquierda) y secundario (derecha) para diferentes configuraciones de carga.}
+\label{fig:corriente_potencia}
+\end{figure}
+
+La Figura \ref{fig:corriente_potencia} muestra la relación entre las corrientes y potencias en ambos devanados. Se observa una relación aproximadamente lineal entre corriente y potencia en ambos devanados, consistente con la relación $P = VI$ bajo voltaje relativamente constante. Las configuraciones en paralelo generan las mayores corrientes y potencias, mientras que las configuraciones en serie operan con menores niveles de corriente.
+
+\subsection{Fuentes de Error y Limitaciones}
+
+Los errores observados pueden atribuirse a:
+
+\begin{itemize}
+\item \textbf{Pérdidas en el núcleo}: Histéresis y corrientes parásitas no consideradas en el modelo ideal.
+\item \textbf{Resistencia de los devanados}: Las resistencias $R_p = 2.5\,\Omega$ y $R_s = 0.6\,\Omega$ introducen caídas de voltaje significativas.
+\item \textbf{Dispersión magnética}: Flujo no totalmente acoplado entre primario y secundario.
+\item \textbf{Precisión instrumental}: Resolución limitada de los multímetros empleados.
+\end{itemize}
+
+\section{Conclusiones}
+
+El estudio experimental de transformadores en configuraciones elevadora y reductora ha permitido validar los principios fundamentales de funcionamiento y caracterizar su desempeño energético bajo diferentes condiciones de carga.
+
+\subsection{Validación de Principios Teóricos}
+
+\begin{itemize}
+\item Las relaciones de transformación experimentales $\bar{k} = 1.904$ (elevador) y $\bar{k} = 0.485$ (reductor) presentan errores relativos de 4.8\% y 2.9\% respectivamente, confirmando la validez de la relación $k = N_s/N_p$.
+\item La configuración reductora mostró mayor precisión y reproducibilidad en las mediciones, con menor dispersión estadística.
+\item Ambas configuraciones exhiben excelente linealidad en la relación $V_s$ vs $V_p$, validando el modelo de transformador ideal como primera aproximación.
+\end{itemize}
+
+\subsection{Caracterización del Desempeño Energético}
+
+\begin{itemize}
+\item La eficiencia del transformador varía significativamente con el tipo de carga (56.1\% a 84.0\%), siendo máxima para configuraciones en paralelo que presentan menor resistencia equivalente.
+\item Las pérdidas aumentan proporcionalmente con la potencia transferida, evidenciando la presencia de pérdidas tanto fijas como variables.
+\item El transformador opera más eficientemente bajo cargas de baja resistencia, sugiriendo que las pérdidas resistivas en los devanados son significativas.
+\end{itemize}
+
+\subsection{Aplicaciones y Limitaciones}
+
+\begin{itemize}
+\item Los resultados confirman la utilidad de los transformadores para modificar niveles de voltaje manteniendo la potencia, con eficiencias aceptables para aplicaciones de baja potencia.
+\item Las diferencias entre el comportamiento ideal y real destacan la importancia de considerar las pérdidas en el diseño de sistemas eléctricos reales.
+\item La metodología empleada proporciona una base sólida para la caracterización experimental de transformadores, aunque requiere instrumentación de mayor precisión para aplicaciones críticas.
+\end{itemize}
+
+\section{Anexos}
+
+\begin{figure}[H]
+\centering
+\resizebox{0.4\columnwidth}{!}{\includegraphics{graficas/img1.jpg}}
+\caption{Montaje experimental del transformador.}
+\label{fig:anexo1}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\resizebox{0.4\columnwidth}{!}{\includegraphics{graficas/img2.jpg}}
+\caption{Detalle del sistema de medición y conexiones de los instrumentos utilizados en el experimento.}
+\label{fig:anexo2}
+\end{figure}
+
+\begin{thebibliography}{9}
+
+\bibitem{Fitzgerald} Fitzgerald, A. E., Kingsley, C., \& Umans, S. D. (2003). \textit{Electric Machinery} (6th ed.). McGraw-Hill.
+
+\bibitem{Chapman} Chapman, S. J. (2012). \textit{Electric Machinery Fundamentals} (5th ed.). McGraw-Hill.
+
+\bibitem{IEEE} Institute of Electrical and Electronics Engineers. (2018). \textit{IEEE Standard Test Code for Liquid-Immersed Distribution, Power, and Regulating Transformers} (IEEE Std C57.12.90-2010).
+
+\bibitem{Krause} Krause, P. C., Wasynczuk, O., Sudhoff, S. D., \& Pekarek, S. (2013). \textit{Analysis of Electric Machinery and Drive Systems} (3rd ed.). Wiley-IEEE Press.
+
+\end{thebibliography}
+
+
+\end{document}
